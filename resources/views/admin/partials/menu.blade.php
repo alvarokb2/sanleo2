@@ -7,7 +7,7 @@
             <a class="btn btn-default" type="button" href="{{route('user.index')}}">
                 <em class="glyphicon glyphicon-align-left"></em> Gestion de Usuarios
             </a>
-            <a class="btn btn-default" type="button" href="">
+            <a class="btn btn-default" type="button" href="{{route('informe.index')}}">
                 <em class="glyphicon glyphicon-align-left"></em> Gestion de Informe
             </a>
         </div>

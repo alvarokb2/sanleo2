@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('user', 'UserController');
 Route::resource('curso', 'CursoController');
 Route::resource('alumno', 'AlumnoController');
+Route::resource('informe', 'InformeController');
+Route::resource('area', 'AreaController');
+Route::resource('subarea', 'SubareaController');
