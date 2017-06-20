@@ -3,11 +3,10 @@
 namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Sanleo\Subarea;
-use Illuminate\Support\Facades\Redirect;
 use Sanleo\Indicador;
+use Illuminate\Support\Facades\Redirect;
 
-class SubareaController extends Controller
+class IndicadorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +26,7 @@ class SubareaController extends Controller
     public function create()
     {
         //
-        return view('admin.informes.areas.subareas.create');
+        return view('admin.informes.areas.subareas.indicadores.create');
     }
 
     /**
@@ -39,12 +38,12 @@ class SubareaController extends Controller
     public function store(Request $request)
     {
         //
-        $area = session()->get('area');
-        $subarea = Subarea::create([
+        $subarea = session()->get('subarea');
+        $indicador= Indicador::create([
             'name' => $request->name
         ]);
-        $area->subareas()->save($subarea);
-        return Redirect::route('area.show', $area);
+        $subarea->indicadores()->save($indicador);
+        return Redirect::route('subarea.show', $subarea);
     }
 
     /**
@@ -56,10 +55,6 @@ class SubareaController extends Controller
     public function show($id)
     {
         //
-        $subarea = Subarea::find($id);
-        session()->put('subarea', $subarea);
-        $indicadores = $subarea->indicadores()->get();
-        return view('admin.informes.areas.subareas.indicadores.indicadores')->with('indicadores', $indicadores);
     }
 
     /**
@@ -94,8 +89,8 @@ class SubareaController extends Controller
     public function destroy($id)
     {
         //
-        $subarea = Subarea::find($id);
-        $subarea->delete();
+        $indicador = Indicador::find($id);
+        $indicador->delete();
         return Redirect::back();
     }
 }

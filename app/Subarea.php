@@ -12,6 +12,11 @@ class Subarea extends Model
         return $this->belongsTo('Sanleo\Area', 'id_area');
     }
 
+    public function indicadores()
+    {
+        return $this->hasMany('Sanleo\Indicador', 'id_subarea');
+    }
+
     protected $fillable = [
         'name'
     ];

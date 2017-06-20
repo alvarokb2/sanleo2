@@ -25,3 +25,4 @@ Route::resource('alumno', 'AlumnoController');
 Route::resource('informe', 'InformeController');
 Route::resource('area', 'AreaController');
 Route::resource('subarea', 'SubareaController');
+Route::resource('indicador', 'IndicadorController');
