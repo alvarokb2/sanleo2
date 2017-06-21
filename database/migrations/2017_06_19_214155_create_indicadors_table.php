@@ -15,7 +15,7 @@ class CreateIndicadorsTable extends Migration
     {
         Schema::create('indicadors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name', 500);
 
             $table->integer('id_subarea')->unsigned()->nullable();
             $table->foreign('id_subarea')->references('id')->on('subareas')->onDelete('cascade');
