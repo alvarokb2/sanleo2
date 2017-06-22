@@ -22,7 +22,7 @@
                             {{$curso->name}}
                         </td>
                         <td>
-                            <a href="{{route('cursos.edit', $curso->id)}}">Editar</a>
+                            <a href="{{route('curso.edit', $curso->id)}}">Editar</a>
                         </td>
                     </tr>
                 @endforeach
