@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Sanleo\User;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -65,7 +66,15 @@ class UserController extends Controller
         $user = User::find($id);
         $cursos = $user->cursos()->get();
         session()->put('user', $user);
-        return view('admin.cursos.cursos')->with('cursos', $cursos);
+        $autenticado = Auth::user();
+        if($autenticado->rol == 'admin'){
+            return view('admin.cursos.cursos')->with('cursos', $cursos);
+
+        }
+        else{
+            return view('educadora.cursos.cursos')->with('cursos', $cursos);
+
+        }
     }
 
     /**
