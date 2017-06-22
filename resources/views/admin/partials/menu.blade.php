@@ -1,12 +1,12 @@
-<div class="row">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-4">
-        <div class="btn-group">
-
-
-        </div>
-    </div>
-    <div class="col-md-4">
-    </div>
-</div>
+<aside class="main-sidebar">
+<section class="sidebar">
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+        <li class="header"><B>MENU</B></li>
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="{{route('user.index')}}"></i> <span>Gestión Usuarios</span></a></li>
+        <li><a href="{{route('informe.index')}}"></i> <span>Gestión Informe</span></a></li>
+    </ul>
+    <!-- /.sidebar-menu -->
+</section>
+  </aside>

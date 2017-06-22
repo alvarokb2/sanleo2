@@ -33,7 +33,7 @@ class HomeController extends Controller
             case 'admin':
                 return Redirect::route('user.index');
             case 'educadora':
-                return view('home')->with('rol', $rol);
+                return view('educadora.cursos.cursos');
             case 'directora':
                 return view('home')->with('rol', $rol);
         }

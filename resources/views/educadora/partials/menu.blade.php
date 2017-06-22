@@ -1,17 +1,12 @@
-<div class="row">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-4">
-        <div class="btn-group">
-
-            <a class="btn btn-default" type="button" href="{{route('curso.index')}}">
-                <em class="glyphicon glyphicon-align-left"></em> Gestion de Cursos
-            </a>
-            <a class="btn btn-default" type="button" href="{{route('home')}}">
-                <em class="glyphicon glyphicon-align-left"></em> Gestion de Apoderados
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4">
-    </div>
-</div>
+<aside class="main-sidebar">
+<section class="sidebar">
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+        <li class="header"><B>MENU</B></li>
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="{{route('curso.index')}}"></i> <span>Gestión Cursos</span></a></li>
+        <li><a href="{{route('user.index')}}"></i> <span>Gestión Apoderados</span></a></li>
+    </ul>
+    <!-- /.sidebar-menu -->
+</section>
+</aside>
