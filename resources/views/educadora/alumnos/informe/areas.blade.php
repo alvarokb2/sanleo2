@@ -6,7 +6,7 @@
     @include('partials.buscar')
     {!! Form::close() !!}
 
-    @include('educadora.partials.lista_areas')
+    @include('educadora.partials.lista_area')
 
 
 @endsection

@@ -3,6 +3,7 @@
 namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Sanleo\Informe;
 
 class ResultadoController extends Controller
 {
@@ -14,6 +15,9 @@ class ResultadoController extends Controller
     public function index()
     {
         //
+        $informe = Informe::first();
+        $areas = $informe->areas()->get();
+        return view('educadora.alumnos.informe.areas')->with('areas', $areas);
     }
 
     /**
