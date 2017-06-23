@@ -4,6 +4,7 @@ namespace Sanleo\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class interno
 {
@@ -16,11 +17,13 @@ class interno
      */
     public function handle($request, Closure $next)
     {
-        $rol = Auth::user()->rol;
-        if ($rol == 'educadora' and $rol == 'directora' and $rol == 'admin') {
-            return redirect('/home');
+        if(Auth::user()){
+            $rol = Auth::user()->rol;
+            if ($rol == 'educadora' or $rol == 'directora' or $rol == 'admin') {
+                return $next($request);
+            }
         }
 
-        return $next($request);
+        return Redirect::route('home');
     }
 }

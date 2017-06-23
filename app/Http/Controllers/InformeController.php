@@ -9,6 +9,11 @@ use Sanleo\Informe;
 
 class InformeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -60,9 +65,8 @@ class InformeController extends Controller
     {
         //
         $informe = Informe::find($id);
-        $areas = $informe->areas()->get();
         session()->put('informe', $informe);
-        return view('admin.informes.areas.areas')->with('areas', $areas);
+        return Redirect::route('area.index');
 
     }
 

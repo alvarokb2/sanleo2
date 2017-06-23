@@ -28,6 +28,13 @@ class ResultadoController extends Controller
     public function create()
     {
         //
+        $alumno = session()->get('alumno');
+        $subarea = session()->get('subarea');
+        $resultado = Resultado::create([
+            'observacion' => '',
+            'seleccion'
+        ]);
+
     }
 
     /**

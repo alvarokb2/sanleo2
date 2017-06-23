@@ -17,8 +17,8 @@ class AreaSeeder extends Seeder
     {
 
       $informe = Informe::create([
-      'year'=> 2017,
-      'periodo'=> 1,
+          'year'=> 2017,
+          'periodo'=> 1,
       ]);
       $informe->save();
 

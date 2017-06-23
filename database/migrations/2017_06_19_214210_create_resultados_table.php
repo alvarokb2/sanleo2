@@ -16,6 +16,9 @@ class CreateResultadosTable extends Migration
         Schema::create('resultados', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->string('observacion');
+            $table->integer('seleccion');
+
             $table->integer('id_alumno')->unsigned()->nullable();
             $table->foreign('id_alumno')->references('id')->on('alumnos')->onDelete('cascade');
 
