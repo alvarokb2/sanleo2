@@ -36,6 +36,12 @@
                   <textarea class="form-control" rows="5" id="comment"></textarea>
                 </div>
             </table>
+
+        {!! Form::model($indicadores, ['route' => ['resultados.update', $indicador->id], 'method' => 'PUT']) !!}
+
+        @include('educadora.partials.guardar_seleccion')
+        {!! Form::close() !!}
+
         </div>
         <div class="col-md-2">
         </div>
