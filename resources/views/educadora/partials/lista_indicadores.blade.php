@@ -31,11 +31,18 @@
                     @php $i = $i +1;
                     @endphp                @endforeach
                 </tbody>
-                <div class="form-group">
-                  <label for="comment">Observacón:</label>
-                  <textarea class="form-control" rows="5" id="comment" name="observacion"></textarea>
-                </div>
+
             </table>
+            <div class="form-group">
+              <label for="comment">Observacón:</label>
+              <textarea class="form-control" rows="5" id="comment" name="observacion"></textarea>
+            </div>
+
+        {!! Form::model($indicadores, ['route' => ['resultado.update', $indicador->id], 'method' => 'PUT']) !!}
+
+        @include('educadora.partials.guardar_seleccion')
+        {!! Form::close() !!}
+
         </div>
         <div class="col-md-2">
         </div>
