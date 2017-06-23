@@ -3,6 +3,7 @@
 namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use phpDocumentor\Reflection\DocBlock\Tags\See;
@@ -64,6 +65,10 @@ class CursoController extends Controller
     public function show($id)
     {
         //
+        $curso = Curso::find($id);
+        session()->put('curso', $curso);
+        $alumnos = $curso->alumnos()->get();
+        return Redirect::route('alumno.index');
     }
 
     /**

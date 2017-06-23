@@ -46,6 +46,7 @@ class AlumnoController extends Controller
     public function show($id)
     {
         //
+        echo 'prueba';
     }
 
     /**
