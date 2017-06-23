@@ -31,7 +31,7 @@
                             {!! Form::open(['method' => 'DELETE', 'route' => ['alumno.destroy', $alumno->id]]) !!}
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
-                            
+
                         </td>
                     </tr>
                 @endforeach
