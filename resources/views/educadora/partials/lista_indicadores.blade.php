@@ -11,7 +11,7 @@
                         Nombre
                     </th>
                     <th>
-                        Acciones
+                        Selección
                     </th>
                 </tr>
                 </thead>
@@ -21,14 +21,14 @@
                         <td>
                             {{$indicador->name}}
                         </td>
-                        <td>
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['indicador.destroy', $indicador->id]]) !!}
-                            {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
-                        </td>
+
                     </tr>
                 @endforeach
                 </tbody>
+                <div class="form-group">
+                  <label for="comment">Observacón:</label>
+                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
             </table>
         </div>
         <div class="col-md-2">
