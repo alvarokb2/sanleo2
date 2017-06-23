@@ -3,7 +3,9 @@
 namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Sanleo\Informe;
+use Sanleo\Resultado;
 
 class ResultadoController extends Controller
 {
@@ -28,12 +30,6 @@ class ResultadoController extends Controller
     public function create()
     {
         //
-        $alumno = session()->get('alumno');
-        $subarea = session()->get('subarea');
-        $resultado = Resultado::create([
-            'observacion' => '',
-            'seleccion'
-        ]);
 
     }
 
@@ -46,6 +42,17 @@ class ResultadoController extends Controller
     public function store(Request $request)
     {
         //
+        $subarea = session()->get('subarea');
+        $alumno = session()->get('alumno');
+        $resultado = Resultado::create([
+            'observacion' => $request->observacion,
+            'seleccion' => $request->seleccion
+        ]);
+        $resultado->save();
+        $resultado->alumno()->save($alumno);
+        $resultado->subarea()->save($subarea);
+        return Redirect::route('subarea.show', $subarea);
+
     }
 
     /**

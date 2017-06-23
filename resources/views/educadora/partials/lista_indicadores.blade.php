@@ -24,7 +24,7 @@
                             {{$indicador->name}}
                         </td>
                         <td>
-                            {!! Form::checkbox($indicador->name, $i) !!}
+                            {!! Form::radio('seleccion', $i) !!}
                         </td>
 
                     </tr>
@@ -33,7 +33,7 @@
                 </tbody>
                 <div class="form-group">
                   <label for="comment">Observacón:</label>
-                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                  <textarea class="form-control" rows="5" id="comment" name="observacion"></textarea>
                 </div>
             </table>
         </div>
