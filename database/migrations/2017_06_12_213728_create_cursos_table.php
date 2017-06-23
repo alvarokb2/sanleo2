@@ -16,6 +16,9 @@ class CreateCursosTable extends Migration
         Schema::create('cursos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+
+            $table->integer('id_profejefe')->unsigned()->nullable();
+            $table->foreign('id_profejefe')->references('id')->on('users')->onDelete('cascade');
             
             $table->timestamps();
         });

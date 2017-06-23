@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 use Sanleo\Subarea;
 use Illuminate\Support\Facades\Redirect;
 use Sanleo\Indicador;
+use Illuminate\Support\Facades\Auth;
 
 class SubareaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('interno');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -59,6 +65,10 @@ class SubareaController extends Controller
         $subarea = Subarea::find($id);
         session()->put('subarea', $subarea);
         $indicadores = $subarea->indicadores()->get();
+        if(Auth::user()->rol == 'educadora'){
+            return view('educadora.alumnos.informe.indicadores')->wih('indicadores', $indicadores);
+        }
+
         return view('admin.informes.areas.subareas.indicadores.indicadores')->with('indicadores', $indicadores);
     }
 

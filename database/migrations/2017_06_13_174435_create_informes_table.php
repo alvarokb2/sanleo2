@@ -17,6 +17,7 @@ class CreateInformesTable extends Migration
             $table->increments('id');
             $table->integer('year');
             $table->integer('periodo');
+            $table->boolean('activo')->default(false);
             $table->timestamps();
         });
     }

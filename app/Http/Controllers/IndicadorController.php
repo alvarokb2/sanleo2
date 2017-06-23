@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class IndicadorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('interno');
+    }
     /**
      * Display a listing of the resource.
      *

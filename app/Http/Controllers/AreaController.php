@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AreaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('interno');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,6 +25,13 @@ class AreaController extends Controller
     public function index()
     {
         //
+        $areas = [];
+        if (session()->has('informe')){
+            $informe = session()->get('informe');
+            $areas = $informe->areas()->get();
+        }
+        return view('admin.informes.areas.areas')->with('areas', $areas);
+
     }
 
     /**
@@ -65,8 +78,6 @@ class AreaController extends Controller
         if(Auth::user()->rol == 'educadora'){
             return view('educadora.alumnos.informe.subarea')->with('subareas', $subareas);
         }
-
-
 
         return view('admin.informes.areas.subareas.subareas')->with('subareas', $subareas);
     }
