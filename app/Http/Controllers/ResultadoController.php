@@ -3,12 +3,8 @@
 namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Sanleo\Alumno;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Contracts\Session;
 
-class AlumnoController extends Controller
+class ResultadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +14,6 @@ class AlumnoController extends Controller
     public function index()
     {
         //
-        $curso = session()->get('curso');
-        $alumnos = $curso->alumnos()->get();
-        return view('educadora.alumnos.alumnos')->with('alumnos', $alumnos);
     }
 
     /**
@@ -31,7 +24,6 @@ class AlumnoController extends Controller
     public function create()
     {
         //
-        return view('educadora.alumnos.create');
     }
 
     /**
@@ -43,16 +35,6 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         //
-        $alumno = Alumno::create([
-            'name' => $request->name,
-            'edad' => $request->edad,
-            'fecha_nacimiento' => $request->fecha_nacimiento,
-        ]);
-        $alumno->save();
-        $curso = session()->get('curso');
-        $curso->alumnos()->save($alumno);
-        return Redirect::route('alumno.index');
-        
     }
 
     /**
@@ -64,9 +46,6 @@ class AlumnoController extends Controller
     public function show($id)
     {
         //
-        $alumno = Alumno::find($id);
-        session()->put('alumno', $alumno);
-        return Redirect::route('resultado.index');
     }
 
     /**
@@ -78,10 +57,6 @@ class AlumnoController extends Controller
     public function edit($id)
     {
         //
-        $alumno = Alumno::find($id);
-        session()->put('alumno', $alumno);
-        $curso = $alumno->curso();
-        return view('educadora.alumnos.edit')->with(['curso' => $curso, 'alumno' => $alumno]);
     }
 
     /**
@@ -94,12 +69,6 @@ class AlumnoController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $alumno = Alumno::findOrFail($id);
-        $alumno->name = $request->name;
-        $alumno->edad = $request->edad;
-        $alumno->fecha_nacimiento = $request->fecha_nacimiento;
-        $alumno->save();
-        return Redirect::route('alumno.index');
     }
 
     /**
@@ -111,8 +80,5 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         //
-        $alumno = Alumno::find($id);
-        $alumno->delete();
-        return Redirect::back();
     }
 }
