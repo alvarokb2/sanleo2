@@ -16,14 +16,20 @@
                 </tr>
                 </thead>
                 <tbody>
+                @php $i = 1;
+                @endphp
                 @foreach($indicadores as $indicador)
                     <tr>
                         <td>
                             {{$indicador->name}}
                         </td>
+                        <td>
+                            {!! Form::checkbox($indicador->name, $i) !!}
+                        </td>
 
                     </tr>
-                @endforeach
+                    @php $i = $i +1;
+                    @endphp                @endforeach
                 </tbody>
                 <div class="form-group">
                   <label for="comment">Observacón:</label>
