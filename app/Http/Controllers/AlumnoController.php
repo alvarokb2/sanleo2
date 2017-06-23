@@ -4,6 +4,9 @@ namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Sanleo\Alumno;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Session;
 
 class AlumnoController extends Controller
 {
