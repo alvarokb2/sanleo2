@@ -67,7 +67,6 @@ class CursoController extends Controller
         //
         $curso = Curso::find($id);
         session()->put('curso', $curso);
-        $alumnos = $curso->alumnos()->get();
         return Redirect::route('alumno.index');
     }
 

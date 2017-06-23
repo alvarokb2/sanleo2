@@ -3,6 +3,7 @@
 namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Sanleo\Alumno;
 
 class AlumnoController extends Controller
 {
@@ -14,6 +15,9 @@ class AlumnoController extends Controller
     public function index()
     {
         //
+        $curso = session()->get('curso');
+        $alumnos = $curso->alumnos()->get();
+        return view('educadora.alumnos.alumnos')->with('alumnos', $alumnos);
     }
 
     /**
@@ -24,6 +28,7 @@ class AlumnoController extends Controller
     public function create()
     {
         //
+        return view('educadora.alumnos.create');
     }
 
     /**
@@ -35,6 +40,16 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         //
+        $alumno = Alumno::create([
+            'name' => $request->name,
+            'edad' => $request->edad,
+            'fecha_nacimiento' => $request->fecha_nacimiento,
+        ]);
+        $alumno->save();
+        $curso = session()->get('curso');
+        $curso->alumnos()->save($alumno);
+        return Redirect::route('alumno.index');
+        
     }
 
     /**
@@ -46,7 +61,6 @@ class AlumnoController extends Controller
     public function show($id)
     {
         //
-        echo 'prueba';
     }
 
     /**
