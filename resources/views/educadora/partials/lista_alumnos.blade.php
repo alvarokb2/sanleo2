@@ -24,6 +24,7 @@
                         <td>
                           <a href="{{route('alumno.edit', $alumno->id)}}">Editar Alumno</a>
                             <a href="{{route('resultado.index', $alumno->id)}}">Contestar Informe</a>
+
                         </td>
                     </tr>
                 @endforeach
