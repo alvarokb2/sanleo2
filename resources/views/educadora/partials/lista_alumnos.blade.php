@@ -25,7 +25,7 @@
                           <a href="{{route('alumno.edit', $alumno->id)}}"class="btn btn-primary">Editar Alumno</a>
                         </td>
                           <td>
-                            <a href="{{route('resultado.index', $alumno->id)}}"class="btn btn-primary">Contestar Informe</a>
+                            <a href="{{route('alumno.show', $alumno->id)}}"class="btn btn-primary">Contestar Informe</a>
                         </td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['alumno.destroy', $alumno->id]]) !!}

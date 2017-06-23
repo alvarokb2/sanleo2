@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Sanleo\Informe;
 use Sanleo\Area;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class AreaController extends Controller
 {
@@ -60,6 +61,13 @@ class AreaController extends Controller
         $area = Area::find($id);
         session()->put('area', $area);
         $subareas = $area->subareas()->get();
+
+        if(Auth::user()->rol == 'educadora'){
+            return view('educadora.alumnos.informe.subarea')->with('subareas', $subareas);
+        }
+
+
+
         return view('admin.informes.areas.subareas.subareas')->with('subareas', $subareas);
     }
 
