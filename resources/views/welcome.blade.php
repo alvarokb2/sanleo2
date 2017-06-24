@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>COR Advantage</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 30px;
             }
 
             .links > a {
@@ -65,31 +65,41 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
+
+      <div align="left"><img src="img/sanleo1.redimensionado.jpg" align="right"><img src="img/índice.jpg"></div>
+         <div class="content">
+              <div class="jumbotron">
+
+<br/>
+<br/>
+<br/>
+
+				<h2>
+					Bienvenidos al Cor Advantage del Jardin Infantil San Leonardo
+				</h2>
+
+
+				<h4><p>
+					COR Advantage evalúa el desarrollo de la primera infancia del niño y la niña, desde que nace y durante los años de jardin, en ocho áreas de contenido.
+					<br><br>Cada área de contenido comprende puntos que abordan conceptos clave del aprendizaje temprano.
+				  <br><br>A partir de notas anecdóticas objetivas sobre el niño y la niña, registradas por las educadoras, cada punto del COR Advantage se califica con una escala de ocho niveles.<br> Con esto, padres y apoderados podran ver de manera confiable en que nivel se encuentra cada niño y niña.
+				</p></h4>
+<br/>
+<br/>
+<br/>
+
+    @if (Route::has('login'))
+        <div class="top-center links">
+            @if (Auth::check())
+                <a href="{{ url('/home') }}">Home</a>
+            @else
+                <a href="{{ url('/login') }}">INGRESAR</a>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
+    @endif
+
+
     </body>
+
+
 </html>

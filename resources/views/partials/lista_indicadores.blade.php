@@ -19,7 +19,7 @@
                 @foreach($indicadores as $indicador)
                     <tr>
                         <td>
-                            {!! Form::checkbox('name', $indicador->name) !!} $indicador->id
+                            {{$indicador->name}}
                         </td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['indicador.destroy', $indicador->id]]) !!}
