@@ -297,7 +297,7 @@ class AreaSeeder extends Seeder
       'name'=> 'Historia',
       ]);
       $subarea34 ->save();
-      $area8->subareas()->save($subarea34);
+      $area7->subareas()->save($subarea34);
 
       /*subareas de area 9*/
 

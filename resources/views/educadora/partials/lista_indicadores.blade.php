@@ -16,6 +16,7 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 @php $i = 1;
                 @endphp
                 @foreach($indicadores as $indicador)
@@ -24,18 +25,21 @@
                             {{$indicador->name}}
                         </td>
                         <td>
+
                             {!! Form::radio('seleccion', $i) !!}
                         </td>
 
                     </tr>
                     @php $i = $i +1;
+
                     @endphp                @endforeach
+
                 </tbody>
 
             </table>
             <div class="form-group">
               <label for="comment">Observacón:</label>
-              <textarea class="form-control" rows="5" id="comment" name="observacion"></textarea>
+              <textarea class="form-control" rows="5" id="comment" name="observacion" spellcheck="true"></textarea>
             </div>
 
         {!! Form::model($indicadores, ['route' => ['resultado.update', $indicador->id], 'method' => 'PUT']) !!}

@@ -16,28 +16,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($usuarios as $usuario)
+                @foreach($areas as $area)
                     <tr>
                         <td>
-                            {{$usuario->name}}
+                            {{$area->name}}
                         </td>
                         <td>
-                            <a href="{{route('user.edit', $usuario->id)}}" class="btn btn-primary">Editar</a>
-                        </td>
-                        <td>
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $usuario->id]]) !!}
-                            {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
-                        </td>
-                        <td>
-                            @if($usuario->rol == 'educadora')
-                                <a href="{{route('user.show', $usuario->id)}}">Ver Cursos</a>
-                            @endif
+                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Sub Areas</a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+
         </div>
         <div class="col-md-2">
         </div>

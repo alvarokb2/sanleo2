@@ -1,4 +1,4 @@
-@extends('educadora.index')
+@extends('directora.index')
 
 @section('contenido')
 
@@ -6,8 +6,14 @@
     @include('partials.buscar')
     {!! Form::close() !!}
 
-    @include('educadora.partials.lista_indicadores')
+    @include('partials.lista_cursos')
+
+    <div class="container-fluid">
+        <a class="btn btn-primary" href="{{route('curso.create')}}">Nuevo</a>
+    </div>
     <div align="center">
       <input  type="button"  onclick="history.back()" value="Volver">
     </div>
+
+
 @endsection

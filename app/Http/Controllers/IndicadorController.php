@@ -69,7 +69,8 @@ class IndicadorController extends Controller
      */
     public function edit($id)
     {
-        //
+      $indicador = Indicador::find($id);
+      return view('admin.informes.areas.subareas.indicadores.edit')->with('indicador', $indicador);
     }
 
     /**
@@ -81,7 +82,11 @@ class IndicadorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $subarea = session()->get('subarea');
+      $indicador = Indicador::findOrFail($id);
+      $indicador->name = $request->name;
+      $indicador->save();
+      return Redirect::route('subarea.show',$subarea);
     }
 
     /**
