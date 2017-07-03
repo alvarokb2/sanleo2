@@ -11,26 +11,35 @@
                         Nombre
                     </th>
                     <th>
-                        Acciones
+                        Selección
                     </th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($areas as $area)
+                @php $i = 1;
+                @endphp
+                @foreach($indicadores as $indicador)
                     <tr>
                         <td>
-                            {{$area->name}}
+                            {{$indicador->name}}
                         </td>
                         <td>
-                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Sub Areas</a>
+                            {!! Form::radio('seleccion', $i) !!}
                         </td>
+
                     </tr>
-                @endforeach
+                    @php $i = $i +1;
+                    @endphp                @endforeach
                 </tbody>
+
             </table>
+            <div class="form-group">
+              <label for="comment">Observacón:</label>
+              <textarea class="form-control" rows="5" id="comment" name="observacion" spellcheck="true"></textarea>
+            </div>
+
         </div>
         <div class="col-md-2">
         </div>
-        
     </div>
 </div>

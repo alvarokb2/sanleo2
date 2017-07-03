@@ -22,6 +22,9 @@
                             {{$indicador->name}}
                         </td>
                         <td>
+                          <a href="{{route('indicador.edit', $indicador->id)}}"class="btn btn-primary">Editar</a>
+                      </td>
+                        <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['indicador.destroy', $indicador->id]]) !!}
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}

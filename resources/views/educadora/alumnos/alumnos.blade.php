@@ -7,5 +7,8 @@
 </div>
     @include('educadora.partials.lista_alumnos')
 
+    <div align="center">
+      <input  type="button"  onclick="history.back()" value="Volver">
+    </div>
 
 @endsection

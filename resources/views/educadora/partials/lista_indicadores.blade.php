@@ -34,17 +34,20 @@
                             {{$indicador->name}}
                         </td>
                         <td>
-                            <input type="radio" id="seleccion" name="seleccion" value="{{$i}}"  {{ old('radio.1')==$i ? 'checked='.'"'.'checked'.'"' : '' }} />                        </td>
+                            <input type="radio" id="seleccion" name="seleccion" value="{{$i}}"  {{ old('radio.1')==$i ? 'checked='.'"'.'checked'.'"' : '' }} />
+                        </td>
 
                     </tr>
                     @php $i = $i +1;
+
                     @endphp                @endforeach
+
                 </tbody>
 
             </table>
             <div class="form-group">
               <label for="comment">Observacón:</label>
-              <textarea class="form-control" rows="5" id="comment" name="observacion"></textarea>
+              <textarea class="form-control" rows="5" id="comment" name="observacion" spellcheck="true"></textarea>
             </div>
 
 

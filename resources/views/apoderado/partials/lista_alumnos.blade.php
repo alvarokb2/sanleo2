@@ -16,14 +16,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($areas as $area)
+                @foreach($alumnos as $alumno)
                     <tr>
                         <td>
-                            {{$area->name}}
+                            {{$alumno->name}}
                         </td>
-                        <td>
-                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Sub Areas</a>
+
+                          <td>
+                            <a href="{{route('alumno.show', $alumno->id)}}"class="btn btn-primary">Ver Informe</a>
                         </td>
+
                     </tr>
                 @endforeach
                 </tbody>
@@ -31,6 +33,5 @@
         </div>
         <div class="col-md-2">
         </div>
-        
     </div>
 </div>
