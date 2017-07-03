@@ -17,6 +17,10 @@ class Alumno extends Model
         return $this->hasMany('Sanleo\Resultado', 'id_alumno');
     }
 
+    public function apoderado(){
+        return $this->belongsTo('Sanleo\User', 'id_apoderado');
+    }
+    
     protected $fillable = ['name', 'edad', 'fecha_nacimiento'];
 
     public function hasResult($subarea){
@@ -33,5 +37,14 @@ class Alumno extends Model
             return $this->resultados()->where('id_subarea', $subarea->id)->where('id_alumno', $this->id)->first();
         }
     }
+
+    public function hasApoderado(){
+        $response = false;
+        if($this->apoderado()->first() != null){
+            $response = true;
+        }
+        return $response;
+    }
+
 
 }

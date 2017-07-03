@@ -12,7 +12,11 @@ class User extends Authenticatable
     public function cursos(){
         return $this->belongsToMany('Sanleo\Curso', 'cursos_users', 'id_user', 'id_curso');
     }
-    
+
+    public function alumnos(){
+        return $this->hasMany('Sanleo\Alumno', 'id_apoderado');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
