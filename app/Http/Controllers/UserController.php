@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Sanleo\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use Hash;
 
 class UserController extends Controller
 {
@@ -20,6 +21,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //

@@ -21,11 +21,19 @@
                         <td>
                             {{$alumno->name}}
                         </td>
+
                         <td>
                           <a href="{{route('alumno.edit', $alumno->id)}}"class="btn btn-primary">Editar Alumno</a>
                         </td>
                           <td>
                             <a href="{{route('alumno.show', $alumno->id)}}"class="btn btn-primary">Contestar Informe</a>
+                        </td>
+                        <td>
+                            @if($alumno->hasApoderado())
+                                <a href="{{route('user.edit', $alumno->id)}}">Editar Apoderado</a>
+                            @else
+                              <a href="{{route('user.create')}}">Agregar Apoderado</a>
+                            @endif
                         </td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['alumno.destroy', $alumno->id]]) !!}

@@ -59,9 +59,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <ul class="dropdown-menu" role="menu">
                                 <li>
                                     <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                      onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Desconectar
+                                    </a>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Cambiar contraseña
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -87,7 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content-header">
             <h1>
                 Bienvenido
-              
+
             </h1>
         </section>
 
@@ -104,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2017, Belaly-Alvaro.</strong> All rights reserved.
+        <strong>Copyright &copy; 2017, A&B.</strong> All rights reserved.
     </footer>
 
     <!-- REQUIRED JS SCRIPTS -->
