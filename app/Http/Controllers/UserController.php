@@ -48,7 +48,7 @@ class UserController extends Controller
     {
         //
         $pos = strpos($request->email, '@');
-        $pass = substr($request->email, 0, $pos);
+        $pass = bcrypt (substr($request->email, 0, $pos));
 
         $user = User::create([
             'name' => $request->name,

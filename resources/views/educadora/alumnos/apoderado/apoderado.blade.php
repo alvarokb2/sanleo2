@@ -2,7 +2,6 @@
 
 @section('contenido')
 
-
     @include('educadora.partials.lista_usuarios')
 
     <div class="container-fluid">

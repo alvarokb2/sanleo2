@@ -20,10 +20,7 @@
     <label for="rol" class="col-md-4 control-label">Rol</label>
     <div class="col-md-6">
     <select class="btn btn-default dropdown-toogle" name="rol">
-        <option value="admin">admin</option>
-        <option value="educadora">educadora</option>
         <option value="apoderado">apoderado</option>
-        <option value="directora">directora</option>
 
     </select>
     </div>
