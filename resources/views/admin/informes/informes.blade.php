@@ -2,10 +2,6 @@
 
 @section('contenido')
 
-    {!! Form::open() !!}
-    @include('partials.buscar')
-    {!! Form::close() !!}
-
     @include('partials.lista_informes')
 
     <div class="container-fluid">
