@@ -27,3 +27,8 @@ Route::resource('area', 'AreaController');
 Route::resource('subarea', 'SubareaController');
 Route::resource('indicador', 'IndicadorController');
 Route::resource('resultado', 'ResultadoController');
+
+Route::get('cambiopass', function() {
+  return view('auth.cambiopass');})->name('cambiopass');
+
+Route::post('cambiopass', 'HomeController@update')->name('cambiapass');
