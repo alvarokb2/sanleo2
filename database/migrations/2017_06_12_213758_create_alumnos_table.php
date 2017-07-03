@@ -22,6 +22,9 @@ class CreateAlumnosTable extends Migration
             $table->integer('id_curso')->unsigned()->nullable();
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
 
+            $table->integer('id_apoderado')->unsigned()->nullable();
+            $table->foreign('id_apoderado')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

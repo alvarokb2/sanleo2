@@ -17,6 +17,10 @@ class Subarea extends Model
         return $this->hasMany('Sanleo\Indicador', 'id_subarea');
     }
 
+    public function resultados(){
+        return $this->hasMany('Sanleo\Resultado', 'id_subarea');
+    }
+    
     protected $fillable = [
         'name'
     ];

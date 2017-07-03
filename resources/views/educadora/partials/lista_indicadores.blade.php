@@ -16,16 +16,25 @@
                 </tr>
                 </thead>
                 <tbody>
+                @if(session()->get('alumno')->hasResult(session()->get('subarea')))
+                    @php $resultado = session()->get('alumno')->getResult(session()->get('subarea'))
+                    @endphp
+                    {!! Form::model($resultado ,['route' => ['resultado.update', $resultado->id], 'method' => 'PUT']) !!}
+                @else
+                    {!! Form::open(['route' => ['resultado.store'], 'method' => 'POST']) !!}
+                @endif
+
+
                 @php $i = 1;
                 @endphp
+
                 @foreach($indicadores as $indicador)
                     <tr>
                         <td>
                             {{$indicador->name}}
                         </td>
                         <td>
-                            {!! Form::radio('seleccion', $i) !!}
-                        </td>
+                            <input type="radio" id="seleccion" name="seleccion" value="{{$i}}"  {{ old('radio.1')==$i ? 'checked='.'"'.'checked'.'"' : '' }} />                        </td>
 
                     </tr>
                     @php $i = $i +1;
@@ -38,7 +47,6 @@
               <textarea class="form-control" rows="5" id="comment" name="observacion"></textarea>
             </div>
 
-        {!! Form::model($indicadores, ['route' => ['resultado.update', $indicador->id], 'method' => 'PUT']) !!}
 
         @include('educadora.partials.guardar_seleccion')
         {!! Form::close() !!}

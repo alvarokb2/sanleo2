@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Sanleo\Informe;
 use Sanleo\Resultado;
+use Illuminate\Support\Facades\Input;
 
 class ResultadoController extends Controller
 {
@@ -41,18 +42,26 @@ class ResultadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $subarea = session()->get('subarea');
         $alumno = session()->get('alumno');
-        $resultado = Resultado::create([
-            'observacion' => $request->observacion,
-            'seleccion' => $request->seleccion
-        ]);
-        $resultado->save();
-        $resultado->alumno()->save($alumno);
-        $resultado->subarea()->save($subarea);
-        return Redirect::route('subarea.show', $subarea);
+        $subarea = session()->get('subarea');
+        if($request->seleccion != null){
+            if($request->observacion == null){
+                $observacion = '';
+            }
+            else{
+                $observacion = $request->observacion;
+            }
 
+            $resultado = Resultado::create([
+                'seleccion' => $request->seleccion,
+                'observacion' => $observacion,
+            ]);
+
+            $alumno->resultados()->save($resultado);
+            $subarea->resultados()->save($resultado);
+        }
+        $area = $subarea->areas()->first()->id;
+        return Redirect::route('area.show', $area);
     }
 
     /**
@@ -87,6 +96,24 @@ class ResultadoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        if($request->seleccion != null){
+            if($request->observacion == null){
+                $observacion = '';
+            }
+            else{
+                $observacion = $request->observacion;
+            }
+
+            $resultado = Resultado::find($id);
+            $resultado->seleccion = $request->seleccion;
+            $resultado->observacion = $request->observacion;
+            $resultado->save();
+
+            $area = session()->get('subarea')->areas()->first()->id;
+            return Redirect::route('area.show', $area);
+        }
+
+        return Redirect::back();
     }
 
     /**
