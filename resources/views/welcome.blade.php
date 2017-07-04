@@ -75,14 +75,14 @@
 <br/>
 
 				<h2>
-					Bienvenidos al Cor Advantage del Jardin Infantil San Leonardo
+					Bienvenidos al COR Advantage del Jardín Infantil San Leonardo
 				</h2>
 
 
 				<h4><p>
-					COR Advantage evalúa el desarrollo de la primera infancia del niño y la niña, desde que nace y durante los años de jardin, en ocho áreas de contenido.
+					COR Advantage evalúa el desarrollo de la primera infancia del niño y la niña, desde que nace y durante los años de jardín, en ocho áreas de contenido.
 					<br><br>Cada área de contenido comprende puntos que abordan conceptos clave del aprendizaje temprano.
-				  <br><br>A partir de notas anecdóticas objetivas sobre el niño y la niña, registradas por las educadoras, cada punto del COR Advantage se califica con una escala de ocho niveles.<br> Con esto, padres y apoderados podran ver de manera confiable en que nivel se encuentra cada niño y niña.
+				  <br><br>A partir de notas anecdóticas objetivas sobre el niño y la niña, registradas por las educadoras, cada punto del COR Advantage se califica con una escala de ocho niveles.<br> Con esto, padres y apoderados podrán ver de manera confiable en qué nivel se encuentra cada niño y niña.
 				</p></h4>
 <br/>
 <br/>

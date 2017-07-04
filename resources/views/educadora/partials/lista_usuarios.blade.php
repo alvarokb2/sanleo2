@@ -10,12 +10,13 @@
                     <th>
                         Nombre
                     </th>
-
+                    <th>
+                        Acciones
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
-                  @php $i = 1;
-                  @endphp
+
                 @foreach($usuarios as $usuario)
                     <tr>
                         <td>
@@ -24,16 +25,22 @@
                         </td>
 
                         <td>
-                            @endif
-                        </td>
-                        <td>
-                            <input type="radio" id="seleccion" name="seleccion" value="{{$i}}" />
-                        </td>
-                    </tr>
-                @endforeach
-                @php $i = $i +1;
 
-                @endphp
+                        </td>
+
+
+                          <a href="{{ route('home') }}" class="btn btn-default pull-right">Añadir</a>
+
+                          <td>
+                              {!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $usuario->id]]) !!}
+                              {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
+                              {!! Form::close() !!}
+                          </td>
+                              @endif
+                    </tr>
+
+
+
                 </tbody>
             </table>
         </div>
