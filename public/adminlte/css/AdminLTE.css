@@ -1046,7 +1046,7 @@ a:focus {
   padding: 0;
   margin: 0 0 0 45px;
   color: #444444;
-  font-size: 15px;
+  font-size: 17px;
   position: relative;
 }
 .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 > small {
@@ -1073,7 +1073,7 @@ a:focus {
   padding: 10px;
 }
 .navbar-nav > .tasks-menu > .dropdown-menu > li .menu > li > a > h3 {
-  font-size: 14px;
+  font-size: 18px;
   padding: 0;
   margin: 0 0 10px 0;
   color: #666666;
@@ -1116,7 +1116,7 @@ a:focus {
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-body {
   padding: 15px;
@@ -2960,7 +2960,7 @@ table.text-center th {
 }
 .users-list-date {
   color: #999;
-  font-size: 12px;
+  font-size: 14px;
 }
 /*
  * Component: Carousel
