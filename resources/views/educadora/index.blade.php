@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('educadora.partials.menu')
+    @if(Auth::user()->rol == 'admin')
+        @include('admin.partials.menu')
+    @elseif(Auth::user()->rol == 'educadora')
+        @include('educadora.partials.menu')
+    @endif
     @yield('contenido')
 @endsection
