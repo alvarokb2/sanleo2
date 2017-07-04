@@ -17,6 +17,7 @@
                 </thead>
                 <tbody>
                 @foreach($usuarios as $usuario)
+                @if($usuario->rol == 'educadora')
                     <tr>
                         <td>
                             {{$usuario->name}}
@@ -30,7 +31,7 @@
                             {!! Form::close() !!}
                         </td>
                         <td>
-                            @if($usuario->rol == 'educadora')
+
                                 <a href="{{route('user.show', $usuario->id)}}">Ver Cursos</a>
                             @endif
                         </td>
