@@ -29,6 +29,7 @@
 <div class="form-group">
 
     <div class="col-md-9">
+      <a href="{{ route('home') }}" class="btn btn-default pull-right">Restablecer contraseña</a>
     </div>
     <div class="col-md-3">
         {!! Form::submit('Guardar') !!}

@@ -3,7 +3,7 @@
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
-            <table class="table">
+             <table class="table table-condensed table-bordered">
                 <thead>
                 <tr>
 
@@ -20,6 +20,8 @@
                 </tr>
                 </thead>
                 <tbody>
+                  @php $i = 1;
+                  @endphp
                 @foreach($informes as $informe)
                     <tr>
                         <td>
@@ -36,6 +38,14 @@
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
+
+                        <td>
+                            <input type="radio" id="seleccion" name="seleccion" value="{{$i}}" />
+                        </td>
+                </tr>
+                @php $i = $i +1;
+
+                @endphp
                     </tr>
                 @endforeach
                 </tbody>

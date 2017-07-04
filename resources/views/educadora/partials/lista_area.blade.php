@@ -3,7 +3,7 @@
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
-            <table class="table">
+             <table class="table table-condensed  table-bordered">
                 <thead>
                 <tr>
 
@@ -31,6 +31,6 @@
         </div>
         <div class="col-md-2">
         </div>
-        
+
     </div>
 </div>
