@@ -78,7 +78,7 @@ class UserController extends Controller
         ]);
 
 
-        $this->asignar_apoderado($user);
+        $this->asignar_apoderado($user->id);
         $rol = Auth::user()->rol;
         if($rol == 'admin' or $rol == 'directora'){
             return Redirect::route('user.index');
@@ -89,7 +89,8 @@ class UserController extends Controller
 
     }
 
-    public function asignar_apoderado($user){
+    public function asignar_apoderado($id){
+        $user = User::find($id);
         if(Auth::user()->rol == 'educadora'){
             if(session()->has('alumno')){
                 $user->alumnos()->save(session()->get('alumno'));

@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('user', 'UserController');
+Route::get('asignar_apoderado/{id}', 'UserController@asignar_apoderado')->name('asignar_apoderado');
+
 Route::resource('curso', 'CursoController');
 Route::resource('alumno', 'AlumnoController');
 Route::resource('informe', 'InformeController');

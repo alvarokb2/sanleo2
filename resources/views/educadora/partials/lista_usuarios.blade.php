@@ -24,7 +24,7 @@
                             {{$usuario->name}}
                         </td>
                             <td>
-                                <a href="{{ route('home') }}" class="btn btn-default pull-right">Añadir</a>
+                                <a href="{{ route('asignar_apoderado', $usuario->id) }}" class="btn btn-default pull-right">Añadir</a>
                             </td>
 
                           <td>
