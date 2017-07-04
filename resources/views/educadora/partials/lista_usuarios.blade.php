@@ -10,31 +10,30 @@
                     <th>
                         Nombre
                     </th>
-                    <th>
-                        Acciones
-                    </th>
+
                 </tr>
                 </thead>
                 <tbody>
+                  @php $i = 1;
+                  @endphp
                 @foreach($usuarios as $usuario)
                     <tr>
                         <td>
                           @if($usuario->rol == 'apoderado')
                             {{$usuario->name}}
                         </td>
-                        <td>
-                            <a href="{{route('user.edit', $usuario->id)}}" class="btn btn-primary">Editar</a>
-                        </td>
-                        <td>
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $usuario->id]]) !!}
-                            {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
-                        </td>
+
                         <td>
                             @endif
                         </td>
+                        <td>
+                            <input type="radio" id="seleccion" name="seleccion" value="{{$i}}" />
+                        </td>
                     </tr>
                 @endforeach
+                @php $i = $i +1;
+
+                @endphp
                 </tbody>
             </table>
         </div>

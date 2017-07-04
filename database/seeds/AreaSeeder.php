@@ -165,11 +165,6 @@ class AreaSeeder extends Seeder
       $subarea13 ->save();
       $area3->subareas()->save($subarea13);
 
-      $subarea14 = Subarea::create([
-      'name'=> 'Conciencia fonológica',
-      ]);
-      $subarea14 ->save();
-      $area3->subareas()->save($subarea14);
 
       $subarea15 = Subarea::create([
       'name'=> 'Conocimiento del alfabeto',
@@ -221,11 +216,7 @@ class AreaSeeder extends Seeder
       $subarea22 ->save();
       $area4->subareas()->save($subarea22);
 
-      $subarea23 = Subarea::create([
-      'name'=> 'Análisis de datos',
-      ]);
-      $subarea23 ->save();
-      $area4->subareas()->save($subarea23);
+
 
       /*subareas de area 6*/
 
@@ -267,17 +258,9 @@ class AreaSeeder extends Seeder
       $subarea29 ->save();
       $area6->subareas()->save($subarea29);
 
-      $subarea30 = Subarea::create([
-      'name'=> 'Mundo natural y físico.',
-      ]);
-      $subarea30 ->save();
-      $area6->subareas()->save($subarea30);
 
-      $subarea31 = Subarea::create([
-      'name'=> 'Herramientas y tecnología.',
-      ]);
-      $subarea31 ->save();
-      $area6->subareas()->save($subarea31);
+
+
 
       /*subareas de area 8*/
 
@@ -287,11 +270,7 @@ class AreaSeeder extends Seeder
       $subarea32 ->save();
       $area7->subareas()->save($subarea32);
 
-      $subarea33 = Subarea::create([
-      'name'=> 'Geografía',
-      ]);
-      $subarea33 ->save();
-      $area7->subareas()->save($subarea33);
+
 
       $subarea34 = Subarea::create([
       'name'=> 'Historia',
@@ -725,43 +704,43 @@ class AreaSeeder extends Seeder
       /*Indicadores de subarea 9 - area 2*/
 
       $indicador = Indicador::create([
-      'name'=> '1. El niño mueve todo el cuerpo',
+      'name'=> '1. No aplica',
       ]);
       $indicador ->save();
       $subarea9->indicadores()->save($indicador);
 
       $indicador1 = Indicador::create([
-      'name'=> '2. El niño camina',
+      'name'=> '2. No aplica',
       ]);
       $indicador1 ->save();
       $subarea9->indicadores()->save($indicador1);
 
       $indicador2 = Indicador::create([
-      'name'=> '3. El niño sube o baja una escalera, corre mientras se mueve alrededor de personas y objetos, o marcha.',
+      'name'=> '3. El niño participa de todas las áreas de educación física, aunque aun no coordina sus habilidades motrices.',
       ]);
       $indicador2 ->save();
       $subarea9->indicadores()->save($indicador2);
 
       $indicador3 = Indicador::create([
-      'name'=> '4. El niño sube o baja escaleras alternando los pies, salta con ambos pies del piso, o galopa.',
+      'name'=> '4. El niño camina de espalda con baja noción espacial, corre en zig-zag chocando con 2 o menos  objetos, salta a pies juntos  con baja fluidez y con descoordinación en 5 o más saltos, salta con un pie apoyando el otro pie 4 veces o más.',
       ]);
       $indicador3 ->save();
       $subarea9->indicadores()->save($indicador3);
 
       $indicador4 = Indicador::create([
-      'name'=> '5. El niño golpea un objeto grande en movimiento con su mano o pie.',
+      'name'=> '5. El niño camina de espalda con amplia noción espacial, corre en zig-zag sin chocar con los objetos, salta a pies junto con descoordinación de 3  a 4 saltos, salta con un pie apoyando el otro pie 2 a 3 veces.',
       ]);
       $indicador4 ->save();
       $subarea9->indicadores()->save($indicador4);
 
       $indicador5 = Indicador::create([
-      'name'=> '6. El niño salta durante ocho repeticiones o más veces (salta en hilera)',
+      'name'=> '6. El niño corre de espalda con baja noción espacial, corre en zig-zag sin chocar con los objetos, salta a pies juntos con descoordinación de 1 a 2 saltos, salta con un pie apoyando el otro pie  1 vez.',
       ]);
       $indicador5 ->save();
       $subarea9->indicadores()->save($indicador5);
 
       $indicador6 = Indicador::create([
-      'name'=> '7. El niño golpea una pelota pequeña en movimiento con una paleta, una raqueta o un bate..',
+      'name'=> '7. El niño corre de espalda con excelente noción espacial, corre en zig-zag sin botar los objetos, salta a pies juntos de manera fluida y coordinada, salta con un pie de manera fluida y coordinada.',
       ]);
       $indicador6 ->save();
       $subarea9->indicadores()->save($indicador6);
@@ -977,55 +956,9 @@ class AreaSeeder extends Seeder
       $subarea13->indicadores()->save($indicador7);
 
 
-      /*Indicadores de subarea 14 - area 4*/
+      /*Indicadores de subarea 14 conciencia fonologica eliminado - (area 3)*/
 
-      $indicador = Indicador::create([
-      'name'=> '1. El niño responde (se voltea, mira, patea, se sobresalta o se calla) a un sonido del entorno.',
-      ]);
-      $indicador ->save();
-      $subarea14->indicadores()->save($indicador);
 
-      $indicador1 = Indicador::create([
-      'name'=> '2. El niño hace sonidos de animales, vehículos u otros objetos familiares.',
-      ]);
-      $indicador1 ->save();
-      $subarea14->indicadores()->save($indicador1);
-
-      $indicador2 = Indicador::create([
-      'name'=> '3. El niño repite o se une a otros para decir partes de rimas simples.',
-      ]);
-      $indicador2 ->save();
-      $subarea14->indicadores()->save($indicador2);
-
-      $indicador3 = Indicador::create([
-      'name'=> '4. El niño espontáneamente dice palabras que riman, ya sean reales o inventadas.',
-      ]);
-      $indicador3 ->save();
-      $subarea14->indicadores()->save($indicador3);
-
-      $indicador4 = Indicador::create([
-      'name'=> '5. El niño señala que dos palabras no riman.',
-      ]);
-      $indicador4 ->save();
-      $subarea14->indicadores()->save($indicador4);
-
-      $indicador5 = Indicador::create([
-      'name'=> '6. El niño destaca que dos palabras (reales o inventadas) comienzan con el mismo sonido.',
-      ]);
-      $indicador5 ->save();
-      $subarea14->indicadores()->save($indicador5);
-
-      $indicador6 = Indicador::create([
-      'name'=> '7. El niño identifica fonemas al comienzo y al final de una palabra.',
-      ]);
-      $indicador6 ->save();
-      $subarea14->indicadores()->save($indicador6);
-
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño divide en segmentos o combina una palabra compuesta de tres o más fonemas.',
-      ]);
-      $indicador7 ->save();
-      $subarea14->indicadores()->save($indicador7);
 
 
       /*Indicadores de subarea 15 - area 4*/
@@ -1436,55 +1369,7 @@ class AreaSeeder extends Seeder
       $subarea22->indicadores()->save($indicador7);
 
 
-      /*Indicadores de subarea 23 */
-
-      $indicador = Indicador::create([
-      'name'=> '1. El niño muestra interés (mira, toca y toma) en un objeto de una colección de objetos.',
-      ]);
-      $indicador ->save();
-      $subarea23->indicadores()->save($indicador);
-
-      $indicador1 = Indicador::create([
-      'name'=> '2. El niño reúne objetos.',
-      ]);
-      $indicador1 ->save();
-      $subarea23->indicadores()->save($indicador1);
-
-      $indicador2 = Indicador::create([
-      'name'=> '3. El niño agrupa cosas en dos o más colecciones.',
-      ]);
-      $indicador2 ->save();
-      $subarea23->indicadores()->save($indicador2);
-
-      $indicador3 = Indicador::create([
-      'name'=> '4. El niño representa información (datos) en forma concreta',
-      ]);
-      $indicador3 ->save();
-      $subarea23->indicadores()->save($indicador3);
-
-      $indicador4 = Indicador::create([
-      'name'=> '5. El niño representa información (datos) en forma abstracta',
-      ]);
-      $indicador4 ->save();
-      $subarea23->indicadores()->save($indicador4);
-
-      $indicador5 = Indicador::create([
-      'name'=> '6. El niño interpreta información (datos) de una representación.',
-      ]);
-      $indicador5 ->save();
-      $subarea23->indicadores()->save($indicador5);
-
-      $indicador6 = Indicador::create([
-      'name'=> '7. El niño aplica información (datos) de una representación.',
-      ]);
-      $indicador6 ->save();
-      $subarea23->indicadores()->save($indicador6);
-
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño realiza una pregunta de interés y recopila e interpreta información (datos) para llegar a la respuesta.',
-      ]);
-      $indicador7 ->save();
-      $subarea23->indicadores()->save($indicador7);
+      /*Indicadores de subarea 23 subarea eliminada - analisis de datos (area 4) - mate*/
 
 
       /*Indicadores de subarea 24 - area 2*/
@@ -1541,43 +1426,43 @@ class AreaSeeder extends Seeder
       /*Indicadores de subarea 25 - area 2*/
 
       $indicador = Indicador::create([
-      'name'=> '1. El niño se calma o se pone en alerta con  sonidos ante sonidos, tonos o música.',
+      'name'=> '1. Pide verbalmente canciones trabajadas en el taller.',
       ]);
       $indicador ->save();
       $subarea25->indicadores()->save($indicador);
 
       $indicador1 = Indicador::create([
-      'name'=> '2. El niño responde a otras personas que cantan , al unírseles con vocalizaciones o movimientos correspondientes.',
+      'name'=> '2. Canta parte de una canción familiar.',
       ]);
       $indicador1 ->save();
       $subarea25->indicadores()->save($indicador1);
 
       $indicador2 = Indicador::create([
-      'name'=> '3. El niño solicita una canción usando una palabra o un gesto.',
+      'name'=> '3. Modifica su voz cuando canta partes de una canción que lo requiere.',
       ]);
       $indicador2 ->save();
       $subarea25->indicadores()->save($indicador2);
 
       $indicador3 = Indicador::create([
-      'name'=> '4. El niño modifica su voz cuando canta partes de una canción.',
+      'name'=> '4. Canta todas las palabras de una canción conocida acompañadas de movimientos y gestos.',
       ]);
       $indicador3 ->save();
       $subarea25->indicadores()->save($indicador3);
 
       $indicador4 = Indicador::create([
-      'name'=> '5. El niño explora el sonido de un instrumento rítmico sencillo de tres o más maneras.',
+      'name'=> '5. Se adapta al paso de una canción a otra sin perder la concentración.',
       ]);
       $indicador4 ->save();
       $subarea25->indicadores()->save($indicador4);
 
       $indicador5 = Indicador::create([
-      'name'=> '6. El niño canta la letra completa de una canción familiar.',
+      'name'=> '6. El niño canta todo o casi todo el coro y los versos no repetitivos de una canción compleja.',
       ]);
       $indicador5 ->save();
       $subarea25->indicadores()->save($indicador5);
 
       $indicador6 = Indicador::create([
-      'name'=> '7. El niño canta todo o parte del estribillo y los versos no repetitivos de una canción compleja',
+      'name'=> '7. El niño reconoce los sonidos y usa los nombres de los instrumentos musicales.',
       ]);
       $indicador6 ->save();
       $subarea25->indicadores()->save($indicador6);
@@ -1592,49 +1477,49 @@ class AreaSeeder extends Seeder
       /*Indicadores de subarea 26 - area 2*/
 
       $indicador = Indicador::create([
-      'name'=> '1. El niño voltea la cabeza, agita los brazos o mueve las piernas mientras está recostado de espalda',
+      'name'=> '1. El niño gira la cabeza, agita los brazos o mueve las piernas mientras está recostado de espalda',
       ]);
       $indicador ->save();
       $subarea26->indicadores()->save($indicador);
 
       $indicador1 = Indicador::create([
-      'name'=> '2. El niño se pone de pie y salta en respuesta a la música',
+      'name'=> '2. El niño se pone de pie y rebota en respuesta a la música',
       ]);
       $indicador1 ->save();
       $subarea26->indicadores()->save($indicador1);
 
       $indicador2 = Indicador::create([
-      'name'=> '3. El niño se mueve activamente con la música.',
+      'name'=> '3. El niño   imita los movimientos de una  u  otra  manera,  al escuchar  la  música.',
       ]);
       $indicador2 ->save();
       $subarea26->indicadores()->save($indicador2);
 
       $indicador3 = Indicador::create([
-      'name'=> '4. El niño nombra y hace un movimiento.',
+      'name'=> '4. El niño imita  los movimientos de la profesora   o de sus compañeros al ritmo de la música,  presentando  dificultades  al crear movimientos propios.',
       ]);
       $indicador3 ->save();
       $subarea26->indicadores()->save($indicador3);
 
       $indicador4 = Indicador::create([
-      'name'=> '5. El niño mantiene un ritmo constante al menos 8 tiempos',
+      'name'=> '5. El niño crea movimientos  propios con  poca frecuencia, su expresión corporal se alterna entre movimientos  creados e imitados, presenta dificultades en  la  identificación del ritmo  musical, requiere aún de la repetición y estimulación  musical  constante del adulto.',
       ]);
       $indicador4 ->save();
       $subarea26->indicadores()->save($indicador4);
 
       $indicador5 = Indicador::create([
-      'name'=> '6. El niño describe cómo su movimiento está conectado a un aspecto musical (ritmo, pulso, melodía)',
+      'name'=> '6. El niño crea movimientos propios, pero requiere que un adulto le brinde apoyo o refuerzo positivo al momento de proponer, además identifica el ritmo musical con las palmas de  manera  intermitente.',
       ]);
       $indicador5 ->save();
       $subarea26->indicadores()->save($indicador5);
 
       $indicador6 = Indicador::create([
-      'name'=> '7. El niño crea su propio baile o series de movimientos (incluyendo al menos 4 movimientos distintos) y repite la secuencia',
+      'name'=> '7. El niño crea  movimientos  propios, expresando  sus  ideas a través del movimiento , identificando el ritmo musical, utilizando el refuerzo de un instrumento a la voz guia del adulto.',
       ]);
       $indicador6 ->save();
       $subarea26->indicadores()->save($indicador6);
 
       $indicador7 = Indicador::create([
-      'name'=> '8. El niño aprende un baile sencillo y lo repite con un ritmo constante',
+      'name'=> '8. El niño crea  movimientos propios, reflejando seguridad en su  quehacer  al momento de representar  un personaje o animal y proponer un movimiento, llevando el ritmo  naturalmente  en su cuerpo, manifestando  un disfrute por moverse al rirtmo de la música.',
       ]);
       $indicador7 ->save();
       $subarea26->indicadores()->save($indicador7);
@@ -1793,106 +1678,12 @@ class AreaSeeder extends Seeder
       $subarea29->indicadores()->save($indicador7);
 
 
-      /*Indicadores de subarea 30 - area 2*/
-
-      $indicador = Indicador::create([
-      'name'=> '1. El niño responde a una experiencia sensorial en el mundo natural.',
-      ]);
-      $indicador ->save();
-      $subarea30->indicadores()->save($indicador);
-
-      $indicador1 = Indicador::create([
-      'name'=> '2. El niño levanta, examina o usa un objeto o material natural.',
-      ]);
-      $indicador1 ->save();
-      $subarea30->indicadores()->save($indicador1);
-
-      $indicador2 = Indicador::create([
-      'name'=> '3. El niño nombra un objeto o evento en el mundo natural y físico.',
-      ]);
-      $indicador2 ->save();
-      $subarea30->indicadores()->save($indicador2);
-
-      $indicador3 = Indicador::create([
-      'name'=> '4. El niño indica o habla acerca de realizar una acción beneficiosa para las plantas o animales.',
-      ]);
-      $indicador3 ->save();
-      $subarea30->indicadores()->save($indicador3);
-
-      $indicador4 = Indicador::create([
-      'name'=> '5. El niño habla sobre donde viven o donde se encuentran diferentes tipos de animales (hábitats).',
-      ]);
-      $indicador4 ->save();
-      $subarea30->indicadores()->save($indicador4);
-
-      $indicador5 = Indicador::create([
-      'name'=> '6. El niño identifica un cambio en la materia o el ambiente y una posible causa.',
-      ]);
-      $indicador5 ->save();
-      $subarea30->indicadores()->save($indicador5);
-
-      $indicador6 = Indicador::create([
-      'name'=> '7. El niño explica cómo y por qué la conducta de las personas puede ser dañina al ambiente y da una idea para ayudar.',
-      ]);
-      $indicador6 ->save();
-      $subarea30->indicadores()->save($indicador6);
-
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño identifica y describe un ciclo o sistema.',
-      ]);
-      $indicador7 ->save();
-      $subarea30->indicadores()->save($indicador7);
+      /*Indicadores de subarea 30 - mundo natural y fisico- ELIMINDA del area 6 - ciencia y tecnologia- */
 
 
-      /*Indicadores de subarea 31 - area 2*/
 
-      $indicador = Indicador::create([
-      'name'=> '1. El niño responde (se lleva a la boca, alcanza, se gira hacia, toca) a un objeto.',
-      ]);
-      $indicador ->save();
-      $subarea31->indicadores()->save($indicador);
+      /*Indicadores de subarea 31 - herramientas y tecnologia - eliminada (area 6)- ciencia y tecnologia- area 2*/
 
-      $indicador1 = Indicador::create([
-      'name'=> '2. El niño explora una herramienta en su juego.',
-      ]);
-      $indicador1 ->save();
-      $subarea31->indicadores()->save($indicador1);
-
-      $indicador2 = Indicador::create([
-      'name'=> '3. El niño explora aparatos tecnológicos.',
-      ]);
-      $indicador2 ->save();
-      $subarea31->indicadores()->save($indicador2);
-
-      $indicador3 = Indicador::create([
-      'name'=> '4. El niño utiliza herramientas para apoyar su juego.',
-      ]);
-      $indicador3 ->save();
-      $subarea31->indicadores()->save($indicador3);
-
-      $indicador4 = Indicador::create([
-      'name'=> '5. El niño explica de manera simple cómo una herramienta funciona.',
-      ]);
-      $indicador4 ->save();
-      $subarea31->indicadores()->save($indicador4);
-
-      $indicador5 = Indicador::create([
-      'name'=> '6. El niño explica de manera simple cómo hacer que una pieza tecnológica funcione.',
-      ]);
-      $indicador5 ->save();
-      $subarea31->indicadores()->save($indicador5);
-
-      $indicador6 = Indicador::create([
-      'name'=> '7. El niño explica cómo las herramientas y la tecnología ayudan en las tareas del diario vivir.',
-      ]);
-      $indicador6 ->save();
-      $subarea31->indicadores()->save($indicador6);
-
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño utiliza tecnología para buscar información en la cual está interesado.',
-      ]);
-      $indicador7 ->save();
-      $subarea31->indicadores()->save($indicador7);
 
 
       /*Indicadores de subarea 32 - area 2*/
@@ -1946,55 +1737,8 @@ class AreaSeeder extends Seeder
       $subarea32->indicadores()->save($indicador7);
 
 
-      /*Indicadores de subarea 33- area 2*/
+      /*Indicadores de subarea 33- Geografia - ELIMINDA DEL AREA 7 - CIENCIAS SOCIALES */
 
-      $indicador = Indicador::create([
-      'name'=> '1. El niño mira detenidamente un objeto en una ubicación física.',
-      ]);
-      $indicador ->save();
-      $subarea33->indicadores()->save($indicador);
-
-      $indicador1 = Indicador::create([
-      'name'=> '2. El niño mueve un objeto para obtener acceso a otro objeto.',
-      ]);
-      $indicador1 ->save();
-      $subarea33->indicadores()->save($indicador1);
-
-      $indicador2 = Indicador::create([
-      'name'=> '3. El niño muestra dónde deben ir los objetos o dónde suceden eventos en el entorno inmediato.',
-      ]);
-      $indicador2 ->save();
-      $subarea33->indicadores()->save($indicador2);
-
-      $indicador3 = Indicador::create([
-      'name'=> '4. El niño usa símbolos para ayudar a recoger o guardar materiales o para identificar la ubicación real de áreas de interés.',
-      ]);
-      $indicador3 ->save();
-      $subarea33->indicadores()->save($indicador3);
-
-      $indicador4 = Indicador::create([
-      'name'=> '5. El niño lee un mapa familiar simple, como un mapa del aula.',
-      ]);
-      $indicador4 ->save();
-      $subarea33->indicadores()->save($indicador4);
-
-      $indicador5 = Indicador::create([
-      'name'=> '6. El niño sabe desplazarse en un edificio que le resulta familiar.',
-      ]);
-      $indicador5 ->save();
-      $subarea33->indicadores()->save($indicador5);
-
-      $indicador6 = Indicador::create([
-      'name'=> '7. El niño describe la ubicación de hitos familiares.',
-      ]);
-      $indicador6 ->save();
-      $subarea33->indicadores()->save($indicador6);
-
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño interpreta un mapa de una ubicación desconocida.',
-      ]);
-      $indicador7 ->save();
-      $subarea33->indicadores()->save($indicador7);
 
 
       /*Indicadores de subarea 34 - area 2*/
@@ -2069,31 +1813,31 @@ class AreaSeeder extends Seeder
       $subarea35->indicadores()->save($indicador2);
 
       $indicador3 = Indicador::create([
-      'name'=> '4. El niño observa (mira y escucha) a otros conversar en inglés.',
+      'name'=> '4. El niño mira (observa y escucha) como otros conversan en inglés.',
       ]);
       $indicador3 ->save();
       $subarea35->indicadores()->save($indicador3);
 
       $indicador4 = Indicador::create([
-      'name'=> '5. El niño usa indicios en el entorno para seguir rutinas e instrucciones.',
+      'name'=> '5. El niño utiliza señales verbales en el ambiente para seguir la rutina y las direcciones.',
       ]);
       $indicador4 ->save();
       $subarea35->indicadores()->save($indicador4);
 
       $indicador5 = Indicador::create([
-      'name'=> '6. El niño responde a palabras y frases simples en inglés solo, sin necesidad de indicios visuales.',
+      'name'=> '6. El niño responde a palabras y frases simples en inglés, necesitando  el apoyo de señales visuales.',
       ]);
       $indicador5 ->save();
       $subarea35->indicadores()->save($indicador5);
 
       $indicador6 = Indicador::create([
-      'name'=> '7. El niño responde a una frase compleja en inglés.',
+      'name'=> '7. El niño responde a  palabras y frases simples en  inglés, sin necesitar señales visuales.',
       ]);
       $indicador6 ->save();
       $subarea35->indicadores()->save($indicador6);
 
       $indicador7 = Indicador::create([
-      'name'=> '8. El niño sigue una conversación en inglés entre dos o más personas.',
+      'name'=> '8. El niño responde a una frase compleja en inglés.',
       ]);
       $indicador7 ->save();
       $subarea35->indicadores()->save($indicador7);
@@ -2114,31 +1858,31 @@ class AreaSeeder extends Seeder
       $subarea36->indicadores()->save($indicador1);
 
       $indicador2 = Indicador::create([
-      'name'=> '3. El niño, si habla, usa un idioma distinto del inglés.',
+      'name'=> '3. El niño solo  utilza su  lenguaje materno.',
       ]);
       $indicador2 ->save();
       $subarea36->indicadores()->save($indicador2);
 
       $indicador3 = Indicador::create([
-      'name'=> '4. El niño imita y/o repite sonidos, palabras y frases en inglés; puede que no se exprese con claridad.',
+      'name'=> '4. El niño imita o repite sonidos  o  palabras  en inglés; el habla puede no ser siempre clara.',
       ]);
       $indicador3 ->save();
       $subarea36->indicadores()->save($indicador3);
 
       $indicador4 = Indicador::create([
-      'name'=> '5. El niño nombra un objeto o una acción familiar en inglés por sí mismo y/o usa una frase común en inglés.',
+      'name'=> '5. El niño nombra por sí mismo, objetos o acciones familiares en inglés.',
       ]);
       $indicador4 ->save();
       $subarea36->indicadores()->save($indicador4);
 
       $indicador5 = Indicador::create([
-      'name'=> '6. El niño dice, en inglés, una frase breve que incluye un verbo; puede combinar palabras en inglés con el idioma que se habla en su hogar en la misma frase.',
+      'name'=> '6. El niño dice, en inglés, una frase corta; puede combinar palabras en inglés con el lenguaje de la casa, en la misma frase.',
       ]);
       $indicador5 ->save();
       $subarea36->indicadores()->save($indicador5);
 
       $indicador6 = Indicador::create([
-      'name'=> '7. El niño habla inglés en oraciones que incluyen frases no estandarizadas; puede cometer errores gramaticales que provienen del idioma de la casa o que son típicos de niños pequeños.',
+      'name'=> '7. El niño utiliza  oraciones   o  frases  cortas en   inglés.',
       ]);
       $indicador6 ->save();
       $subarea36->indicadores()->save($indicador6);

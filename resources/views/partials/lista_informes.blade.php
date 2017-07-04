@@ -43,11 +43,12 @@
                             <input type="radio" id="seleccion" name="seleccion" value="{{$i}}" />
                         </td>
                 </tr>
+
+                    </tr>
+                @endforeach
                 @php $i = $i +1;
 
                 @endphp
-                    </tr>
-                @endforeach
                 </tbody>
             </table>
         </div>
