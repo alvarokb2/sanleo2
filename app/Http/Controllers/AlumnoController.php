@@ -18,8 +18,8 @@ class AlumnoController extends Controller
     public function index()
     {
         //
-        
-        
+
+
         $curso = session()->get('curso');
         $alumnos = $curso->alumnos()->get();
         return view('educadora.alumnos.alumnos')->with('alumnos', $alumnos);
@@ -53,7 +53,7 @@ class AlumnoController extends Controller
         $curso = session()->get('curso');
         $curso->alumnos()->save($alumno);
         return Redirect::route('alumno.index');
-        
+
     }
 
     /**
@@ -97,7 +97,6 @@ class AlumnoController extends Controller
         //
         $alumno = Alumno::findOrFail($id);
         $alumno->name = $request->name;
-        $alumno->edad = $request->edad;
         $alumno->fecha_nacimiento = $request->fecha_nacimiento;
         $alumno->save();
         return Redirect::route('alumno.index');
