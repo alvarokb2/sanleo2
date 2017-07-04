@@ -21,7 +21,7 @@ class Alumno extends Model
         return $this->belongsTo('Sanleo\User', 'id_apoderado');
     }
     
-    protected $fillable = ['name', 'edad', 'fecha_nacimiento'];
+    protected $fillable = ['name', 'fecha_nacimiento'];
 
     public function hasResult($subarea){
         if($this->resultados()->first() != null){

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Sanleo\User;
-use Illuminate\Support\Facades\Bcrypt;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {

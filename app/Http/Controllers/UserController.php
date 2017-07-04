@@ -110,7 +110,15 @@ class UserController extends Controller
     {
         //
         $user = User::find($id);
-        return view('admin.usuarios.edit')->with('user', $user);
+        $autenticado = Auth::user();
+        if($autenticado->rol == 'admin'){
+            return view('admin.usuarios.edit')->with('user', $user);
+        }
+        else{
+            return view('educadora.alumnos.apoderado.edit')->with('user', $user);
+        }
+
+
     }
 
     /**
@@ -127,7 +135,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->rol = $request->rol;
         $user->save();
-        return Redirect::route('user.index');
+        return Redirect::route('home');
     }
 
     /**

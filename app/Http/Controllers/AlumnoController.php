@@ -47,7 +47,6 @@ class AlumnoController extends Controller
         //
         $alumno = Alumno::create([
             'name' => $request->name,
-            'edad' => $request->edad,
             'fecha_nacimiento' => $request->fecha_nacimiento,
         ]);
         $alumno->save();
