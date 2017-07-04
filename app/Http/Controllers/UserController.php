@@ -25,8 +25,8 @@ class UserController extends Controller
     public function index()
     {
         //
-        $usuarios = User::all();
-        return view('admin.usuarios.usuarios')->with('usuarios', $usuarios);
+        $usuarios = User::all();return view('educadora.alumnos.apoderado.apoderado')->with('usuarios', $usuarios);
+        //return view('admin.usuarios.usuarios')->with('usuarios', $usuarios);
     }
 
     /**

@@ -18,27 +18,24 @@
                 <tbody>
 
                 @foreach($usuarios as $usuario)
-                    <tr>
+                    @if($usuario->rol == 'apoderado')
+                        <tr>
                         <td>
-                          @if($usuario->rol == 'apoderado')
                             {{$usuario->name}}
                         </td>
-
-                        <td>
-
-                        </td>
-
-
-                          <a href="{{ route('home') }}" class="btn btn-default pull-right">Añadir</a>
+                            <td>
+                                <a href="{{ route('home') }}" class="btn btn-default pull-right">Añadir</a>
+                            </td>
 
                           <td>
                               {!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $usuario->id]]) !!}
                               {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                               {!! Form::close() !!}
                           </td>
-                              @endif
-                    </tr>
 
+                    </tr>
+                    @endif
+                @endforeach
 
 
                 </tbody>
