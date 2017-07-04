@@ -25,8 +25,17 @@ class UserController extends Controller
     public function index()
     {
         //
-        $usuarios = User::all();
-        return view('admin.usuarios.usuarios')->with('usuarios', $usuarios);
+        $rol = Auth::user()->rol;
+        if($rol == 'admin'){
+            $usuarios = User::all();
+            return view('admin.usuarios.usuarios')->with('usuarios', $usuarios);
+        }
+        elseif($rol == 'educadora'){
+            $usuarios = User::where('rol', 'apoderado')->get();
+            return view('educadora.alumnos.apoderado.apoderado')->with('usuarios', $usuarios);
+        }
+        return Redirect::route('home');
+
     }
 
     /**
@@ -67,16 +76,25 @@ class UserController extends Controller
         ]);
 
 
+        $this->asignar_apoderado($user);
+        $rol = Auth::user()->rol;
+        if($rol == 'admin' or $rol == 'directora'){
+            return Redirect::route('user.index');
+        }
+        else{
+            return Redirect::route('alumno.index');
+        }
+
+    }
+
+    public function asignar_apoderado($user){
         if(Auth::user()->rol == 'educadora'){
             if(session()->has('alumno')){
-                echo $user->alumnos()->save(session()->get('alumno'));
+                $user->alumnos()->save(session()->get('alumno'));
                 return Redirect::route('alumno.index');
             }
         }
-
-        return Redirect::route('user.index');
     }
-
     /**
      * Display the specified resource.
      *
