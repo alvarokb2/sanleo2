@@ -3,7 +3,7 @@
         <div class="col-md-2">
         </div>
         <div class="col-md-11">
-             <table class="table table-condensed  table-bordered">
+            <table class="table table-condensed  table-bordered">
                 <thead>
                 <tr>
 
@@ -30,13 +30,15 @@
                         </td>
 
                         <td>
-                          <a href="{{route('alumno.edit', $alumno->id)}}"class="btn btn-primary">Editar Alumno</a>
+                            <a href="{{route('alumno.edit', $alumno->id)}}" class="btn btn-primary">Editar Alumno</a>
                         </td>
-                          <td>
-                            <a href="{{route('alumno.show', $alumno->id)}}"class="btn btn-primary">Contestar Informe</a>
+                        <td>
+                            <a href="{{route('alumno.show', $alumno->id)}}" class="btn btn-primary">Contestar
+                                Informe</a>
                         </td>
                         <td>
                             @if($alumno->hasApoderado())
+                                {{session()->put('apoderado', $alumno->apoderado()->first())}}
                                 <a href="{{route('user.edit', $alumno->apoderado()->first()->id)}}">Editar Apoderado</a>
                             @else
                                 {{session()->put('alumno', $alumno)}}
@@ -47,7 +49,6 @@
                             {!! Form::open(['method' => 'DELETE', 'route' => ['alumno.destroy', $alumno->id]]) !!}
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
-
                         </td>
                     </tr>
                 @endforeach

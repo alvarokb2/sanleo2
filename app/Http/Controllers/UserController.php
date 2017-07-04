@@ -27,11 +27,10 @@ class UserController extends Controller
         //
 
         $rol = Auth::user()->rol;
-        if($rol == 'admin'){
+        if ($rol == 'admin') {
             $usuarios = User::all();
             return view('admin.usuarios.usuarios')->with('usuarios', $usuarios);
-        }
-        elseif($rol == 'educadora'){
+        } elseif ($rol == 'educadora') {
             $usuarios = User::where('rol', 'apoderado')->get();
             return view('educadora.alumnos.apoderado.apoderado')->with('usuarios', $usuarios);
         }
@@ -49,10 +48,9 @@ class UserController extends Controller
     {
         //
         $rol = Auth::user()->rol;
-        if($rol == 'admin' or $rol == 'directora'){
+        if ($rol == 'admin' or $rol == 'directora') {
             return view('admin.usuarios.create');
-        }
-        else{
+        } else {
             return view('educadora.alumnos.apoderado.create');
         }
     }
@@ -60,14 +58,14 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //
         $pos = strpos($request->email, '@');
-        $pass = bcrypt (substr($request->email, 0, $pos));
+        $pass = bcrypt(substr($request->email, 0, $pos));
 
 
         $user = User::create([
@@ -80,28 +78,39 @@ class UserController extends Controller
 
         $this->asignar_apoderado($user->id);
         $rol = Auth::user()->rol;
-        if($rol == 'admin' or $rol == 'directora'){
+        if ($rol == 'admin' or $rol == 'directora') {
             return Redirect::route('user.index');
-        }
-        else{
+        } else {
             return Redirect::route('alumno.index');
         }
 
     }
 
-    public function asignar_apoderado($id){
+    public function asignar_apoderado($id)
+    {
         $user = User::find($id);
-        if(Auth::user()->rol == 'educadora'){
-            if(session()->has('alumno')){
+        if (Auth::user()->rol == 'educadora') {
+            if (session()->has('alumno')) {
                 $user->alumnos()->save(session()->get('alumno'));
                 return Redirect::route('alumno.index');
             }
         }
     }
+
+    public function restablecer_pass()
+    {
+        $user = session()->get('apoderado');
+        $pos = strpos($user->email, '@');
+        $pass = bcrypt(substr($user->email, 0, $pos));
+        $user->password = $pass;
+        $user->save();
+        return Redirect::back();
+    }
+
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -111,11 +120,10 @@ class UserController extends Controller
         $cursos = $user->cursos()->get();
         session()->put('user', $user);
         $autenticado = Auth::user();
-        if($autenticado->rol == 'admin'){
+        if ($autenticado->rol == 'admin') {
             return view('admin.cursos.cursos')->with('cursos', $cursos);
 
-        }
-        else{
+        } else {
             return view('educadora.cursos.cursos')->with('cursos', $cursos);
 
         }
@@ -124,7 +132,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -132,11 +140,10 @@ class UserController extends Controller
         //
         $user = User::find($id);
         $autenticado = Auth::user();
-        if($autenticado->rol == 'admin'){
+        if ($autenticado->rol == 'admin') {
             return view('admin.usuarios.edit')->with('user', $user);
-        }
-        else{
-            return view('educadora.alumnos.apoderado.edit')->with('user', $user);
+        } else {
+            return view('educadora.alumnos.apoderado.edit')->with('apoderado', $user);
         }
 
 
@@ -145,8 +152,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -162,7 +169,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

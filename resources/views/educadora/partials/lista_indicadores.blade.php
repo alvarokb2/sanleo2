@@ -3,10 +3,9 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-11">
-             <table class="table table-condensed  table-bordered">
+            <table class="table table-condensed  table-bordered">
                 <thead>
                 <tr>
-
                     <th>
                         Nombre
                     </th>
@@ -23,51 +22,26 @@
                 @else
                     {!! Form::open(['route' => ['resultado.store'], 'method' => 'POST']) !!}
                 @endif
-
-
-                @php $i = 1;
-                @endphp
-
                 @foreach($indicadores as $indicador)
                     <tr>
                         <td>
                             {{$indicador->name}}
                         </td>
-
-                        @if(session()->get('alumno')->hasResult(session()->get('subarea')))
-                            <td>
-                                <input type="radio" id="seleccion" name="seleccion" value="{{$i}}"  {{ $resultado->seleccion == $i ? 'checked' : '' }} />
-                            </td>
-                        @else
-                            <td>
-                                <input type="radio" id="seleccion" name="seleccion" value="{{$i}}" />
-                            </td>
-                        @endif
-
-
+                        <td>
+                            <input type="radio" id="seleccion" name="seleccion"
+                                   value="{{$indicador->id}}" {{ (isset($resultado) && $resultado->seleccion == $indicador->id) ? 'checked' : '' }} />
+                        </td>
                     </tr>
-                    @php $i = $i +1;
-
-                    @endphp
                 @endforeach
-
                 </tbody>
-
             </table>
             <div class="form-group">
-              <label for="comment">Observacón:</label>
-
-                @if(session()->get('alumno')->hasResult(session()->get('subarea')))
-                    <textarea class="form-control" rows="5" id="comment" name="observacion" spellcheck="true">{{ $resultado->observacion }}</textarea>
-                @else
-                    <textarea class="form-control" rows="5" id="comment" name="observacion" spellcheck="true"></textarea>
-                @endif
-
+                <label for="comment">Observacón:</label>
+                    <textarea class="form-control" rows="5" id="comment" name="observacion"
+                              spellcheck="true">{{ isset($resultado) ? $resultado->observacion : ''}}</textarea>
             </div>
-
-        @include('educadora.partials.guardar_seleccion')
-        {!! Form::close() !!}
-
+            @include('educadora.partials.guardar_seleccion')
+            {!! Form::close() !!}
         </div>
         <div class="col-md-2">
         </div>
