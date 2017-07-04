@@ -50,9 +50,9 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #080707;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -64,7 +64,7 @@
             }
         </style>
     </head>
-    <body>
+    <body BACKGROUND="img/fondo.gif">
 
       <div align="left"><img src="img/sanleo1.redimensionado.jpg" align="right"><img src="img/índice.jpg"></div>
          <div class="content">
