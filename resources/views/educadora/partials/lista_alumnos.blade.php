@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-2">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-11">
             <table class="table">
                 <thead>
                 <tr>
@@ -10,6 +10,10 @@
                     <th>
                         Nombre
                     </th>
+                    <th>
+                        Fecha nacimiento
+                    </th>
+
                     <th>
                         Acciones
                     </th>
@@ -20,6 +24,9 @@
                     <tr>
                         <td>
                             {{$alumno->name}}
+                        </td>
+                        <td>
+                            {{$alumno->fecha_nacimiento}}
                         </td>
 
                         <td>

@@ -63,15 +63,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                      document.getElementById('logout-form').submit();">
                                         Desconectar
                                     </a>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a href="{{ route('cambiopass') }}">
                                         Cambiar contraseña
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
+
+
                                 </li>
                             </ul>
                         </li>

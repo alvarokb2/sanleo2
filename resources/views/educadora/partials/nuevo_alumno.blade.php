@@ -19,19 +19,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('edad') ? ' has-error' : '' }}">
-                        <label for="edad" class="col-md-4 control-label">Edad</label>
-
-                        <div class="col-md-6">
-                            <input id="edad" type="text" class="form-control" name="edad" value="{{ old('edad') }}" required autofocus>
-
-                            @if ($errors->has('edad'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('edad') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                    </div>
+                    
                     <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }}">
                         <label for="fecha_nacimiento" class="col-md-4 control-label">Fecha de nacimiento</label>
 

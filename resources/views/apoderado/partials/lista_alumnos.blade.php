@@ -11,6 +11,9 @@
                         Nombre
                     </th>
                     <th>
+                        Fecha de nacimiento
+                    </th>
+                    <th>
                         Acciones
                     </th>
                 </tr>
@@ -20,6 +23,9 @@
                     <tr>
                         <td>
                             {{$alumno->name}}
+                        </td>
+                        <td>
+                            {{$alumno->fecha_nacimiento}}
                         </td>
 
                           <td>

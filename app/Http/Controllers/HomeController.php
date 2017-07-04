@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Sanleo\User;
+use Illuminate\Support\Facades\Bcrypt;
 
 class HomeController extends Controller
 {
@@ -17,6 +19,40 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    /**
+     * Update the password for the user.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'old' => 'required',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $user = User::find(Auth::id());
+        $hashedPassword = $user->password;
+
+        if (Hash::check($request->old, $hashedPassword)) {
+            //Change the password
+            $user->fill([
+                'password' => Hash::make($request->password)
+            ])->save();
+
+            $request->session()->flash('success', 'Contraseña cambiada.');
+
+            return Redirect::route('home');
+        }
+
+        $request->session()->flash('failure', 'La contraseña no ha podido ser cambiada.');
+
+        return back();
+
+
     }
 
     /**
