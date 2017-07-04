@@ -18,6 +18,8 @@ class AlumnoController extends Controller
     public function index()
     {
         //
+        
+        
         $curso = session()->get('curso');
         $alumnos = $curso->alumnos()->get();
         return view('educadora.alumnos.alumnos')->with('alumnos', $alumnos);

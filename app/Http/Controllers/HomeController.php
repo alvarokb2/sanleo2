@@ -30,6 +30,9 @@ class HomeController extends Controller
 
         switch ($user->rol){
             case 'apoderado':
+                $alumnos = Auth::user()->alumnos()->get();
+                
+                
                 return view('home')->with('rol', $user->rol);
             case 'admin':
                 return Redirect::route('user.index');

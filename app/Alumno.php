@@ -36,6 +36,7 @@ class Alumno extends Model
         if($this->resultados()->first() != null and $this->hasResult($subarea)){
             return $this->resultados()->where('id_subarea', $subarea->id)->where('id_alumno', $this->id)->first();
         }
+        
     }
 
     public function hasApoderado(){

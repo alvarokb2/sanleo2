@@ -37,7 +37,13 @@ class UserController extends Controller
     public function create()
     {
         //
-        return view('admin.usuarios.create');
+        $rol = Auth::user()->rol;
+        if($rol == 'admin' or $rol == 'directora'){
+            return view('admin.usuarios.create');
+        }
+        else{
+            return view('educadora.alumnos.apoderado.create');
+        }
     }
 
     /**
@@ -52,13 +58,23 @@ class UserController extends Controller
         $pos = strpos($request->email, '@');
         $pass = bcrypt (substr($request->email, 0, $pos));
 
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'rol' => $request->rol,
             'password' => $pass,
         ]);
-        Return Redirect::route('user.index');
+
+
+        if(Auth::user()->rol == 'educadora'){
+            if(session()->has('alumno')){
+                echo $user->alumnos()->save(session()->get('alumno'));
+                return Redirect::route('alumno.index');
+            }
+        }
+
+        return Redirect::route('user.index');
     }
 
     /**

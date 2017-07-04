@@ -32,7 +32,8 @@
                             @if($alumno->hasApoderado())
                                 <a href="{{route('user.edit', $alumno->id)}}">Editar Apoderado</a>
                             @else
-                              <a href="{{route('user.create')}}">Agregar Apoderado</a>
+                                {{session()->put('alumno', $alumno)}}
+                                <a href="{{route('user.create')}}">Agregar Apoderado</a>
                             @endif
                         </td>
                         <td>
