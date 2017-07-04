@@ -25,6 +25,7 @@ class UserController extends Controller
     public function index()
     {
         //
+
         $rol = Auth::user()->rol;
         if($rol == 'admin'){
             $usuarios = User::all();
@@ -35,6 +36,7 @@ class UserController extends Controller
             return view('educadora.alumnos.apoderado.apoderado')->with('usuarios', $usuarios);
         }
         return Redirect::route('home');
+
 
     }
 
