@@ -20,20 +20,21 @@
                 @foreach($usuarios as $usuario)
                     @if($usuario->rol == 'apoderado')
                         <tr>
-                        <td>
-                            {{$usuario->name}}
-                        </td>
                             <td>
-                                <a href="{{ route('asignar_apoderado', $usuario->id) }}" class="btn btn-default pull-right">Añadir</a>
+                                {{$usuario->name}}
+                            </td>
+                            <td>
+                                <a href="{{ route('asignar_apoderado', $usuario->id) }}"
+                                   class="btn btn-default pull-right">Añadir</a>
                             </td>
 
-                          <td>
-                              {!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $usuario->id]]) !!}
-                              {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                              {!! Form::close() !!}
-                          </td>
+                            <td>
+                                {!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $usuario->id]]) !!}
+                                {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::close() !!}
+                            </td>
 
-                    </tr>
+                        </tr>
                     @endif
                 @endforeach
 
