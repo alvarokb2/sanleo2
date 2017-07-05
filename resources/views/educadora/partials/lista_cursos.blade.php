@@ -28,8 +28,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('user.index') }}" class="btn btn-default pull-right">Agregar colaborador</a>
-
+            
         </div>
         <div class="col-md-2">
         </div>

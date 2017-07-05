@@ -1056,11 +1056,6 @@ class AreaSeeder extends Seeder
       $indicador6 ->save();
       $subarea16->indicadores()->save($indicador6);
 
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño decodifica (lee) una palabra de dos silabas, separando la palabra en silabas',
-      ]);
-      $indicador7 ->save();
-      $subarea16->indicadores()->save($indicador7);
 
 
       /*Indicadores de subarea 17 - area 4*/
@@ -1159,7 +1154,7 @@ class AreaSeeder extends Seeder
       $subarea18->indicadores()->save($indicador6);
 
       $indicador7 = Indicador::create([
-      'name'=> '8. El niño usa convenciones de escritura (en español) al escribir varias oraciones de izquierda a derecha y en líneas horizontales.',
+      'name'=> '8. El niño usa convenciones de escritura al escribir varias oraciones de izquierda a derecha y en líneas horizontales.',
       ]);
       $indicador7 ->save();
       $subarea18->indicadores()->save($indicador7);
@@ -1467,11 +1462,7 @@ class AreaSeeder extends Seeder
       $indicador6 ->save();
       $subarea25->indicadores()->save($indicador6);
 
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño reconoce los sonidos y usa los nombres de los instrumentos musicales.',
-      ]);
-      $indicador7 ->save();
-      $subarea25->indicadores()->save($indicador7);
+
 
 
       /*Indicadores de subarea 26 - area 2*/
@@ -1887,12 +1878,7 @@ class AreaSeeder extends Seeder
       $indicador6 ->save();
       $subarea36->indicadores()->save($indicador6);
 
-      $indicador7 = Indicador::create([
-      'name'=> '8. El niño habla inglés en oraciones completas, usando el orden de las palabras y las construcciones adecuadas.',
-      ]);
-      $indicador7 ->save();
-      $subarea36->indicadores()->save($indicador7);
-
+      
 
     }
 }

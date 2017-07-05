@@ -58,13 +58,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
+                                    <a a href="{{ route('cambiopass') }}">
+                                    Cambiar contraseña
+                                    </a>
                                     <a href="{{ route('logout') }}"
                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Desconectar
-                                    </a>
-                                    <a href="{{ route('cambiopass') }}">
-                                        Cambiar contraseña
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -91,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                
+
 
             </h1>
         </section>
