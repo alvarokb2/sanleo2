@@ -3,10 +3,9 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-11">
-            <table class="table">
+            <table class="table table-condensed  table-bordered">
                 <thead>
                 <tr>
-
                     <th>
                         Nombre
                     </th>
@@ -16,26 +15,27 @@
                 </tr>
                 </thead>
                 <tbody>
-                @php $i = 1;
-                @endphp
+                @if(session()->get('alumno')->hasResult(session()->get('subarea')))
+                    @php $resultado = session()->get('alumno')->getResult(session()->get('subarea'))
+                    @endphp
+                @endif
                 @foreach($indicadores as $indicador)
                     <tr>
                         <td>
                             {{$indicador->name}}
                         </td>
                         <td>
-                            {!! Form::radio('seleccion', $i) !!}
+                            <input type="radio" id="seleccion" name="seleccion"
+                                   value="{{$indicador->id}}" {{ (isset($resultado) && $resultado->seleccion == $indicador->id) ? 'checked' : 'disabled'}} />
                         </td>
-
                     </tr>
-                    @php $i = $i +1;
-                    @endphp                @endforeach
+                @endforeach
                 </tbody>
-
             </table>
             <div class="form-group">
-              <label for="comment">Observacón:</label>
-              <textarea class="form-control" rows="5" id="comment" name="observacion" spellcheck="true"></textarea>
+                <label for="comment">Observacón:</label>
+                    <textarea class="form-control" readonly rows="5" id="comment" name="observacion"
+                              spellcheck="true">{{ isset($resultado) ? $resultado->observacion : 'disabled'}}</textarea>
             </div>
 
         </div>

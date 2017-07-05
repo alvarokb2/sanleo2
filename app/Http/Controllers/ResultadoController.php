@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Sanleo\Informe;
 use Sanleo\Resultado;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 
 class ResultadoController extends Controller
 {
@@ -20,7 +21,15 @@ class ResultadoController extends Controller
         //
         $informe = Informe::first();
         $areas = $informe->areas()->get();
-        return view('educadora.alumnos.informe.areas')->with('areas', $areas);
+        $rol = Auth::user()->rol;
+        if($rol == 'educadora'){
+            return view('educadora.alumnos.informe.areas')->with('areas', $areas);
+        }
+        elseif($rol == 'apoderado'){
+            return view('apoderado.alumnos.informe.areas')->with('areas', $areas);
+        }
+
+
     }
 
     /**

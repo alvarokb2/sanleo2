@@ -14,7 +14,6 @@ class AreaController extends Controller
 
     public function __construct()
     {
-        $this->middleware('interno');
     }
 
     /**
@@ -25,12 +24,21 @@ class AreaController extends Controller
     public function index()
     {
         //
+        $rol = Auth::user()->rol;
         $areas = [];
         if (session()->has('informe')){
             $informe = session()->get('informe');
             $areas = $informe->areas()->get();
         }
-        return view('admin.informes.areas.areas')->with('areas', $areas);
+
+        if($rol == 'apoderado'){
+            return view('apoderado.alumnos.informe.areas')->with('areas', $areas);
+
+        }
+        elseif($rol == 'admin'){
+            return view('admin.informes.areas.areas')->with('areas', $areas);
+
+        }
 
     }
 
@@ -71,12 +79,16 @@ class AreaController extends Controller
     public function show($id)
     {
         //
+        $rol = Auth::user()->rol;
         $area = Area::find($id);
         session()->put('area', $area);
         $subareas = $area->subareas()->get();
 
-        if(Auth::user()->rol == 'educadora'){
+        if($rol == 'educadora'){
             return view('educadora.alumnos.informe.subarea')->with('subareas', $subareas);
+        }
+        elseif($rol == 'apoderado'){
+            return view('apoderado.alumnos.informe.subareas')->with('subareas', $subareas);
         }
 
         return view('admin.informes.areas.subareas.subareas')->with('subareas', $subareas);

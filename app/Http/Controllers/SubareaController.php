@@ -12,7 +12,6 @@ class SubareaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('interno');
     }
     
     /**
@@ -62,11 +61,15 @@ class SubareaController extends Controller
     public function show($id)
     {
         //
+        $rol = Auth::user()->rol;
         $subarea = Subarea::find($id);
         session()->put('subarea', $subarea);
         $indicadores = $subarea->indicadores()->get();
         if(Auth::user()->rol == 'educadora'){
             return view('educadora.alumnos.informe.indicadores')->with('indicadores', $indicadores);
+        }
+        elseif($rol == 'apoderado'){
+            return view('apoderado.alumnos.informe.indicadores')->with('indicadores', $indicadores);
         }
 
         return view('admin.informes.areas.subareas.indicadores.indicadores')->with('indicadores', $indicadores);
