@@ -19,10 +19,9 @@
 
     <label for="rol" class="col-md-4 control-label">Rol</label>
     <div class="col-md-6">
-    <select class="btn btn-default dropdown-toogle" name="rol">
-        <option value="apoderado">apoderado</option>
 
-    </select>
+        <Input readonly type="text" class="form-control" name="rol" value="Apoderado">
+      
     </div>
 </div>
 

@@ -1,0 +1,106 @@
+*   [33m0a7940f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlaly[m[33m)[m Merge branch 'laly' of github.com:alvarokb2/sanleo2 into laly
+[31m|[m[32m\[m  
+[31m|[m *   [33m51814b5[m[33m ([m[1;31morigin/laly[m[33m, [m[1;31morigin/alvaro[m[33m)[m Merge branch 'alvaro' into laly
+[31m|[m [33m|[m[34m\[m  
+* [33m|[m [34m\[m   [33m8e0a323[m Merge branch 'alvaro' of github.com:alvarokb2/sanleo2 into laly
+[33m|[m[34m\[m [33m\[m [34m\[m  
+[33m|[m [34m|[m[33m/[m [34m/[m  
+[33m|[m[33m/[m[34m|[m [34m/[m   
+[33m|[m [34m|[m[34m/[m    
+[33m|[m * [33m1b1ff47[m apoderados listos
+* [36m|[m [33ma39b171[m cambio de desconectar por cambiar contraseña xD
+[36m|[m[36m/[m  
+* [33m27decb5[m push push push
+*   [33mcd48272[m Merge branch 'laly' of https://github.com/alvarokb2/sanleo2 into laly
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33ma22d18e[m nada
+* [1;32m|[m [33md1024b0[m le debemos plata a mi hermano
+[1;32m|[m[1;32m/[m  
+* [33m4f0add8[m preparacion merge
+* [33m89ac920[m nada
+*   [33m87319e1[m puros problemas
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m905f59c[m puros problemas
+[1;33m|[m [1;34m|[m *   [33m4d1db04[m[33m ([m[1;35mrefs/stash[m[33m)[m WIP on laly: 56ef2a3 Merge branch 'laly' into alvaro
+[1;33m|[m [1;34m|[m [1;33m|[m[1;36m\[m  
+[1;33m|[m [1;34m|[m[1;33m/[m [1;36m/[m  
+[1;33m|[m[1;33m/[m[1;34m|[m [1;36m|[m   
+[1;33m|[m [1;34m|[m * [33mf213849[m index on laly: 56ef2a3 Merge branch 'laly' into alvaro
+[1;33m|[m [1;34m|[m[1;33m/[m  
+[1;33m|[m[1;33m/[m[1;34m|[m   
+* [1;34m|[m   [33m56ef2a3[m Merge branch 'laly' into alvaro
+[31m|[m[1;34m\[m [1;34m\[m  
+[31m|[m [1;34m|[m[1;34m/[m  
+[31m|[m * [33m7703f9e[m nose que hice
+* [32m|[m [33maff97b3[m add apoderado
+[32m|[m[32m/[m  
+* [33mc8864dc[m buscar in y vistas gestion papis
+* [33m6bf1f42[m saque el campo edad del alumnos controller - update
+* [33mca59283[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m botoncillos en informe - boton recuperar contraseña - y bla
+* [33m9636651[m ordenemonos me puse disperso
+* [33m386345e[m ni se que hice
+*   [33m618a8de[m[33m ([m[1;32mmaster[m[33m)[m Merge branch 'laly' of https://github.com/alvarokb2/sanleo2 into laly
+[33m|[m[34m\[m  
+[33m|[m * [33med04830[m cambio contraseña malo xD jaja
+[33m|[m * [33mc71b29d[m arreglin
+* [34m|[m [33m19cd6cb[m agregado boton chequeado y añadir apoderado
+[34m|[m[34m/[m  
+* [33m8c74cff[m agregar papi
+* [33m2276dba[m add funcion alumno->hasApoderado()
+* [33m624d027[m vistas educadora->gestion apoderados
+* [33mcf60de5[m buscar.... fuera
+*   [33m8e24770[m merge
+[35m|[m[36m\[m  
+[35m|[m * [33mcc86c6b[m editar indicadores y algunos volver xD
+* [36m|[m [33m5b0869a[m create y update resultados
+[36m|[m[36m/[m  
+* [33m70da479[m es lo que hay
+*   [33ma255576[m merged
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33md1acea7[m ahora si
+[1;31m|[m * [33mf9815ce[m error pa variar
+* [1;32m|[m [33ma87b4f1[m primeros pasos indicadores
+[1;32m|[m[1;32m/[m  
+* [33m9f1a4a9[m add checkboxes
+*   [33mbbaded4[m Merge branch 'alvaro' into laly
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m5367601[m cambios varios
+* [1;34m|[m [33m89ff190[m no tengo niun brillo
+* [1;34m|[m   [33m02c4427[m Merge branch 'alvaro' of github.com:alvarokb2/sanleo2 into laly
+[1;35m|[m[1;34m\[m [1;34m\[m  
+[1;35m|[m [1;34m|[m[1;34m/[m  
+[1;35m|[m * [33m4d49de4[m add navegacion informe hasta subareas moduo educadora
+* [1;36m|[m [33m3d4e9eb[m areas
+[1;36m|[m[1;36m/[m  
+* [33m3a0ac7b[m add funcionalidades gestion de alumnos
+* [33m54015d0[m vistas de informe...falta arreglar los indicadores para ser seleccionados
+* [33m75f0ddd[m pequeñeses
+* [33m0e7716f[m fin del dia... queda la noche
+*   [33m230024a[m Merge branch 'laly' of https://github.com/alvarokb2/sanleo2 into laly
+[31m|[m[32m\[m  
+[31m|[m * [33mdd23bd7[m crear alumno
+* [32m|[m [33md6238d5[m fix error fillable alumnos
+[32m|[m[32m/[m  
+* [33mba78f6a[m ahora si
+*   [33m3773d85[m Merge branch 'laly' of https://github.com/alvarokb2/sanleo2 into laly
+[33m|[m[34m\[m  
+[33m|[m * [33mc1de877[m crear alumnos
+* [34m|[m   [33mbd55ae8[m Merge branch 'laly' of https://github.com/alvarokb2/sanleo2 into laly
+[35m|[m[34m\[m [34m\[m  
+[35m|[m [34m|[m[34m/[m  
+[35m|[m * [33m419e81e[m agregado ver alumnos al curso
+* [36m|[m [33mc427ec1[m add curso.show y alumno.index
+[36m|[m[36m/[m  
+*   [33mafe1f71[m merge
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m50139bd[m ahora si que si que si que si
+* [1;32m|[m [33m9b48780[m carpetas feas borradas u.u
+[1;32m|[m[1;32m/[m  
+* [33mf0952e5[m parece que me lo exe
+* [33m8e838d8[m seeder informe mas largo del mundo
+* [33m79f601d[m gestion de informe lista
+*   [33mb433994[m Merge branch 'master' of https://github.com/alvarokb2/sanleo2
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33ma8a4f44[m Initial commit
+* [33mc0a91c8[m daaaaaaale
+* [33m361d8c0[m Modulo user y curso completo
