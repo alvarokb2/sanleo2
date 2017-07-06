@@ -69,7 +69,7 @@ class HomeController extends Controller
                 $alumnos = Auth::user()->alumnos()->get();
                 
                 
-                return view('home')->with('rol', $user->rol);
+                return view('apoderado.alumnos.alumnos')->with('alumnos', $alumnos);
             case 'admin':
                 return Redirect::route('user.index');
             case 'educadora':
