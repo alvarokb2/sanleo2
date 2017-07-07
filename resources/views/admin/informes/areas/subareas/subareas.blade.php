@@ -2,6 +2,8 @@
 
 @section('contenido')
 
+<center><h3>Sub áreas</h3></center>
+
 
     @include('partials.lista_subareas')
 
