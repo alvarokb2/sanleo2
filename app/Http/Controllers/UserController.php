@@ -161,6 +161,7 @@ class UserController extends Controller
         //
         $user = User::findOrFail($id);
         $user->name = $request->name;
+        $user->email = $request->email;
         $user->rol = $request->rol;
         $user->save();
         return Redirect::route('home');

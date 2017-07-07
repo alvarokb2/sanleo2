@@ -33,6 +33,7 @@
                             <a href="{{route('alumno.edit', $alumno->id)}}" class="btn btn-primary">Editar Alumno</a>
                         </td>
                         <td>
+                          @if(Auth::user()->rol == 'educadora')
                             <a href="{{route('alumno.show', $alumno->id)}}" class="btn btn-primary">Contestar
                                 Informe</a>
                         </td>
@@ -50,6 +51,7 @@
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
+                          @endif
                     </tr>
                 @endforeach
                 </tbody>
