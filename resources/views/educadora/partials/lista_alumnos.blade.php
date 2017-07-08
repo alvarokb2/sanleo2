@@ -55,6 +55,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {!! $alumnos->render() !!}
         </div>
         <div class="col-md-2">
         </div>

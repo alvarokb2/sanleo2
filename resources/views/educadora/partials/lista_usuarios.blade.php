@@ -41,6 +41,7 @@
 
                 </tbody>
             </table>
+            {!! $usuarios->render() !!}
         </div>
         <div class="col-md-2">
         </div>

@@ -21,8 +21,8 @@ class AlumnoController extends Controller
 
 
         $curso = session()->get('curso');
-        $alumnos = $curso->alumnos()->get();
-        return view('educadora.alumnos.alumnos')->with('alumnos', $alumnos);
+        $alumnos = $curso->alumnos()->paginate(15);
+        return view('educadora.alumnos.alumnos', compact('alumnos'))->with('alumnos', $alumnos);
     }
 
     /**

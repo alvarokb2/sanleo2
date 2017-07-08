@@ -32,7 +32,7 @@ class UserController extends Controller
             $usuarios = User::all();
             return view('admin.usuarios.usuarios')->with('usuarios', $usuarios);
         } elseif ($rol == 'educadora') {
-            $usuarios = User::where('rol', 'apoderado')->get();
+            $usuarios = User::where('rol', 'apoderado')->paginate(15);
             return view('educadora.alumnos.apoderado.apoderado')->with('usuarios', $usuarios);
         }
         return Redirect::route('home');
