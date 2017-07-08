@@ -4,6 +4,7 @@ namespace Sanleo\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Sanleo\Alumno;
 use Sanleo\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
@@ -35,8 +36,13 @@ class UserController extends Controller
             return view('educadora.alumnos.apoderado.apoderado')->with('usuarios', $usuarios);
         }
         return Redirect::route('home');
-
-
+    }
+    
+    public function add_apoderado($alumno){
+        $alumno = Alumno::find($alumno);
+        session()->put('alumno', $alumno);
+        echo session()->get('alumno');
+        return Redirect::route('user.index');
     }
 
     /**

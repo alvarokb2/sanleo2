@@ -42,8 +42,7 @@
                                 {{session()->put('apoderado', $alumno->apoderado()->first())}}
                                 <a href="{{route('user.edit', $alumno->apoderado()->first()->id)}}">Editar Apoderado</a>
                             @else
-                                {{session()->put('alumno', $alumno)}}
-                                <a href="{{route('user.index')}}">Agregar Apoderado</a>
+                                <a href="{{route('add_apoderado', $alumno)}}">Agregar Apoderado</a>
                             @endif
                         </td>
                         <td>
