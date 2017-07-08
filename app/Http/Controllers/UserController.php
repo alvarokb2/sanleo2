@@ -37,8 +37,9 @@ class UserController extends Controller
         }
         return Redirect::route('home');
     }
-    
-    public function add_apoderado($alumno){
+
+    public function add_apoderado($alumno)
+    {
         $alumno = Alumno::find($alumno);
         session()->put('alumno', $alumno);
         echo session()->get('alumno');
@@ -70,24 +71,32 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        $pos = strpos($request->email, '@');
-        $pass = bcrypt(substr($request->email, 0, $pos));
-
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'rol' => $request->rol,
-            'password' => $pass,
-        ]);
-
-
-        $this->asignar_apoderado($user->id);
-        $rol = Auth::user()->rol;
-        if ($rol == 'admin' or $rol == 'directora') {
-            return Redirect::route('user.index');
+        $validar = count(User::where('email', $request->email)->first());
+        if ($validar == 1) {
+            Session::flash('error', 'El email '.$request->email.' ya se encuentra registrado');
+            return Redirect::back();
         } else {
-            return Redirect::route('alumno.index');
+
+            $pos = strpos($request->email, '@');
+            $pass = bcrypt(substr($request->email, 0, $pos));
+
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'rol' => $request->rol,
+                'password' => $pass,
+            ]);
+
+
+            $this->asignar_apoderado($user->id);
+            $rol = Auth::user()->rol;
+            if ($rol == 'admin' or $rol == 'directora') {
+                return Redirect::route('user.index');
+            } else {
+                return Redirect::route('alumno.index');
+            }
+
         }
 
     }
