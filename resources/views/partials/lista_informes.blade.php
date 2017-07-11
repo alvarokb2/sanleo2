@@ -20,8 +20,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                  @php $i = 1;
-                  @endphp
+
                 @foreach($informes as $informe)
                     <tr>
                         <td>
@@ -39,16 +38,12 @@
                             {!! Form::close() !!}
                         </td>
 
-                        <td>
-                            <input type="radio" id="seleccion" name="seleccion" value="{{$i}}" />
-                        </td>
+
                 </tr>
 
                     </tr>
                 @endforeach
-                @php $i = $i +1;
-
-                @endphp
+                
                 </tbody>
             </table>
         </div>

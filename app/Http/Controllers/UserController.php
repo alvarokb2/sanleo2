@@ -179,7 +179,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->rol = $request->rol;
         $user->save();
-        return Redirect::route('home');
+        return Redirect::route('alumno.index');
     }
 
     /**

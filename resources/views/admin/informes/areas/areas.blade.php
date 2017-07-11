@@ -1,6 +1,8 @@
 @extends('admin.index')
 
 @section('contenido')
+<center><h3>Lista de Areas</h3></center>
+
 
     @include('partials.lista_areas')
 
@@ -8,9 +10,9 @@
         <a class="btn btn-primary" href="{{route('area.create')}}">Nuevo</a>
     </div>
 
-    <div align="center">
-      <input  type="button"  onclick="history.back()" value="Volver">
-    </div>
+    <center>
+        <a href="{{route('informe.index')}}"><button class="btn btn-primary">Regresar</button></a>
+    </center>
 
 
 @endsection

@@ -27,8 +27,10 @@
                             <label for="email" class="col-md-4 control-label">Correo Electronico</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
+                                {!! Form::email('email', null, [
+                                  'class' => 'form-control',
+                                  'required', 'unique'
+                                ]) !!}
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>

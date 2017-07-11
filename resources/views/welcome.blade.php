@@ -65,8 +65,13 @@
         </style>
     </head>
     <body BACKGROUND="img/fondo.gif">
-
-      <div align="left"><img src="img/sanleo1.redimensionado.jpg" align="right"><img src="img/índice.jpg"></div>
+      <br/><br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
          <div class="content">
               <div class="jumbotron">
 
@@ -97,7 +102,7 @@
             @endif
         </div>
     @endif
-
+<div align="right"><img src="img/índice.jpg"></div>
 
     </body>
 

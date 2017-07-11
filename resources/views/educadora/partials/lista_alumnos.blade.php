@@ -38,25 +38,32 @@
                                 Informe</a>
                         </td>
                         <td>
+
                             @if($alumno->hasApoderado())
                                 {{session()->put('apoderado', $alumno->apoderado()->first())}}
                                 <a href="{{route('user.edit', $alumno->apoderado()->first()->id)}}">Editar Apoderado</a>
                             @else
                                 <a href="{{route('add_apoderado', $alumno)}}">Agregar Apoderado</a>
                             @endif
+
                         </td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['alumno.destroy', $alumno->id]]) !!}
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
+
                           @endif
+
                     </tr>
                 @endforeach
                 </tbody>
             </table>
             {!! $alumnos->render() !!}
         </div>
+
+
+
         <div class="col-md-2">
         </div>
     </div>
