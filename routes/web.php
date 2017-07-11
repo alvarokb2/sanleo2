@@ -26,6 +26,7 @@ Route::get('add_apoderado/{id}', 'UserController@add_apoderado')->name('add_apod
 
 Route::resource('curso', 'CursoController');
 Route::get('add_educadora/{id}', 'CursoController@add_educadora')->name('add_educadora');
+Route::get('set_educadora/{id}', 'CursoController@set_educadora')->name('set_educadora');
 
 Route::resource('alumno', 'AlumnoController');
 Route::resource('informe', 'InformeController');
