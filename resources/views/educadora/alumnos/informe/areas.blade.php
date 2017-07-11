@@ -7,7 +7,7 @@
 
     @include('educadora.partials.lista_area')
 
-    
+
     <center>
         <a href="{{route('alumno.index')}}"><button class="btn btn-primary">Regresar</button></a>
     </center>
