@@ -13,6 +13,7 @@
                     <th>
                         Acciones
                     </th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,11 +25,13 @@
                         <td>
                             <a href="{{route('curso.show', $curso->id)}}">Ver alumnos</a>
                         </td>
+                        <td>
+                            <a href="{{ route('add_educadora', $curso->id) }}" class="btn btn-default pull-right">Agregar colaborador</input>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('user.index') }}" class="btn btn-default pull-right">Agregar colaborador</a>
         </div>
         <div class="col-md-2">
         </div>

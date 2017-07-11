@@ -49,11 +49,23 @@ class CursoController extends Controller
         //
         $user = $request->session()->get('user');
         $curso = Curso::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'id_profejefe' => $user->id,
         ]);
         $curso->save();
         $user->cursos()->attach($curso);
+        //$profejefe->save();
+        echo $curso;
+
         return Redirect::route('user.show', $user->id);
+    }
+
+    public function add_educadora($id){
+        echo $id;
+    }
+
+    public function set_colaborador($educadora){
+
     }
 
     /**

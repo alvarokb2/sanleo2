@@ -17,13 +17,17 @@ class Curso extends Model
         return $this->hasMany('Sanleo\Alumno', 'id_curso');
     }
 
+    public function profejefe(){
+        return $this->hasOne('Sanleo\User', 'id_profejefe');
+    }
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name',
+        'name', 'id_profejefe',
     ];
 
 

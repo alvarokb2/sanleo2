@@ -73,13 +73,11 @@ class UserController extends Controller
         //
         $validar = count(User::where('email', $request->email)->first());
         if ($validar == 1) {
-            Session::flash('error', 'El email '.$request->email.' ya se encuentra registrado');
+            Session::flash('error', 'El email ' . $request->email . ' ya se encuentra registrado');
             return Redirect::back();
         } else {
-
             $pos = strpos($request->email, '@');
             $pass = bcrypt(substr($request->email, 0, $pos));
-
 
             $user = User::create([
                 'name' => $request->name,
@@ -88,18 +86,17 @@ class UserController extends Controller
                 'password' => $pass,
             ]);
 
-
             $this->asignar_apoderado($user->id);
             $rol = Auth::user()->rol;
+
             if ($rol == 'admin' or $rol == 'directora') {
                 return Redirect::route('user.index');
             } else {
                 return Redirect::route('alumno.index');
             }
 
+            }
         }
-
-    }
 
     public function asignar_apoderado($id)
     {

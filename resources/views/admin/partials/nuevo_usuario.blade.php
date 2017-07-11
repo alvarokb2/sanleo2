@@ -40,7 +40,7 @@
                         <div class="form-group">
                           <label for="rol" class="col-md-4 control-label">Rol</label>
                           <div class="col-md-6">
-                            <Input readonly type="text" class="form-control" name="rol" value="Educadora">
+                            <Input readonly type="text" class="form-control" name="rol" value="educadora">
                           </div>
 
                         </div>

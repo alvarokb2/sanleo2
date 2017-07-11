@@ -25,6 +25,8 @@ Route::get('restablecer_pass', 'UserController@restablecer_pass')->name('restabl
 Route::get('add_apoderado/{id}', 'UserController@add_apoderado')->name('add_apoderado');
 
 Route::resource('curso', 'CursoController');
+Route::get('add_educadora/{id}', 'CursoController@add_educadora')->name('add_educadora');
+
 Route::resource('alumno', 'AlumnoController');
 Route::resource('informe', 'InformeController');
 Route::resource('area', 'AreaController');
@@ -33,6 +35,6 @@ Route::resource('indicador', 'IndicadorController');
 Route::resource('resultado', 'ResultadoController');
 
 Route::get('cambiopass', function() {
-  return view('auth.cambiopass');})->name('cambiopass');
+  return view('auth.cambiopass/{id}');})->name('cambiopass');
 
 Route::post('cambiopass', 'HomeController@update')->name('cambiapass');
