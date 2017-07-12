@@ -28,32 +28,35 @@
                         <td>
                             {{$alumno->fecha_nacimiento}}
                         </td>
+                        @if(Auth::user()->rol == 'educadora' or Auth::user()->rol == 'admin')
+                            <td>
+                                <a href="{{route('alumno.show', $alumno->id)}}" class="btn btn-primary">Contestar
+                                    Informe</a>
+                            </td>
+                        @endif
+                        @if(Auth::user()->rol == 'educadora')
 
-                        <td>
-                            <a href="{{route('alumno.edit', $alumno->id)}}" class="btn btn-primary">Editar Alumno</a>
-                        </td>
-                        <td>
-                          @if(Auth::user()->rol == 'educadora')
-                            <a href="{{route('alumno.show', $alumno->id)}}" class="btn btn-primary">Contestar
-                                Informe</a>
-                        </td>
-                        <td>
+                            <td>
+                                <a href="{{route('alumno.edit', $alumno->id)}}" class="btn btn-primary">Editar
+                                    Alumno</a>
+                            </td>
+                            <td>
+                                @if($alumno->hasApoderado())
+                                    {{session()->put('apoderado', $alumno->apoderado()->first())}}
+                                    <a href="{{route('user.edit', $alumno->apoderado()->first()->id)}}">Editar
+                                        Apoderado</a>
+                                @else
+                                    <a href="{{route('add_apoderado', $alumno)}}">Agregar Apoderado</a>
+                                @endif
 
-                            @if($alumno->hasApoderado())
-                                {{session()->put('apoderado', $alumno->apoderado()->first())}}
-                                <a href="{{route('user.edit', $alumno->apoderado()->first()->id)}}">Editar Apoderado</a>
-                            @else
-                                <a href="{{route('add_apoderado', $alumno)}}">Agregar Apoderado</a>
-                            @endif
+                            </td>
+                            <td>
+                                {!! Form::open(['method' => 'DELETE', 'route' => ['alumno.destroy', $alumno->id]]) !!}
+                                {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::close() !!}
+                            </td>
 
-                        </td>
-                        <td>
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['alumno.destroy', $alumno->id]]) !!}
-                            {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
-                        </td>
-
-                          @endif
+                        @endif
 
                     </tr>
                 @endforeach
@@ -61,7 +64,6 @@
             </table>
             {!! $alumnos->render() !!}
         </div>
-
 
 
         <div class="col-md-2">

@@ -22,7 +22,7 @@ class ResultadoController extends Controller
         $informe = Informe::first();
         $areas = $informe->areas()->get();
         $rol = Auth::user()->rol;
-        if($rol == 'educadora'){
+        if($rol == 'educadora' or $rol == 'admin'){
             return view('educadora.alumnos.informe.areas')->with('areas', $areas);
         }
         elseif($rol == 'apoderado'){
