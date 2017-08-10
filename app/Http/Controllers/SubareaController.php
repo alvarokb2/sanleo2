@@ -65,8 +65,11 @@ class SubareaController extends Controller
         $subarea = Subarea::find($id);
         session()->put('subarea', $subarea);
         $indicadores = $subarea->indicadores()->get();
-        if(Auth::user()->rol == 'educadora' or $rol == 'admin'){
-            return view('educadora.alumnos.informe.indicadores')->with('indicadores', $indicadores);
+        if($rol == 'educadora' or $rol == 'admin'){
+            if(session()->has('alumno')){
+                return view('educadora.alumnos.informe.indicadores')->with('indicadores', $indicadores);
+            }
+            return view('admin.informes.areas.subareas.indicadores.indicadores')->with('indicadores', $indicadores);
         }
         elseif($rol == 'apoderado'){
             return view('apoderado.alumnos.informe.indicadores')->with('indicadores', $indicadores);

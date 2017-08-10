@@ -85,8 +85,14 @@ class AreaController extends Controller
         $subareas = $area->subareas()->get();
 
         if($rol == 'educadora' or $rol == 'admin'){
-            return view('educadora.alumnos.informe.subarea')->with('subareas', $subareas);
+            if(session()->has('alumno')){
+                return view('educadora.alumnos.informe.subarea')->with('subareas', $subareas);
+            }
+            return view('admin.informes.areas.subareas.subareas')->with('subareas', $subareas);
         }
+
+
+
         elseif($rol == 'apoderado'){
             return view('apoderado.alumnos.informe.subareas')->with('subareas', $subareas);
         }
