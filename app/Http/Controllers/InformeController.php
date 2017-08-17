@@ -23,6 +23,9 @@ class InformeController extends Controller
     {
         //
         $informes = Informe::all();
+        if(session()->has('alumno')){
+            session()->forget('alumno');
+        }
         return view('admin.informes.informes')->with('informes', $informes);
     }
 

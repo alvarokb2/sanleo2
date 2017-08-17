@@ -19,9 +19,11 @@ class AlumnoController extends Controller
     {
         //
 
+
         if(session()->has('alumno')){
         session()->forget('alumno');
         }
+
 
         $curso = session()->get('curso');
         $alumnos = $curso->alumnos()->paginate(15);
