@@ -30,7 +30,7 @@
                             {{$informe->periodo}}
                         </td>
                         <td>
-                            <a href="{{route('informe.show', $informe->id)}}" class="btn btn-primary">Ver areas</a>
+                            <a href="{{route('informe.show', $informe->id)}}" class="btn btn-primary">Ver áreas</a>
                         </td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['informe.destroy', $informe->id]]) !!}
@@ -43,7 +43,7 @@
 
                     </tr>
                 @endforeach
-                
+
                 </tbody>
             </table>
         </div>

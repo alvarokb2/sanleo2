@@ -20,6 +20,9 @@ class CursoController extends Controller
     public function index()
     {
         //
+        if(session()->has('alumno')){
+        session()->forget('alumno');
+        }
         if (Session::has('user')) {
             $user = Session::get('user');
             return Redirect::route('user.show', $user);

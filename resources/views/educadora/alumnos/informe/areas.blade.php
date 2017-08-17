@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-<center><h3>Areas</h3></center>
+<center><h3>Áreas</h3></center>
 
 
     @include('educadora.partials.lista_area')

@@ -22,7 +22,7 @@
                             {{$area->name}}
                         </td>
                         <td>
-                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Sub Areas</a>
+                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Sub Áreas</a>
                         </td>
                     </tr>
                 @endforeach

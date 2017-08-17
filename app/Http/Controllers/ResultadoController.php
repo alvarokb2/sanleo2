@@ -69,6 +69,19 @@ class ResultadoController extends Controller
             $alumno->resultados()->save($resultado);
             $subarea->resultados()->save($resultado);
         }
+
+        else{
+          if($request->observacion != null){
+              $seleccion= -1;
+              $resultado = Resultado::create([
+                  'seleccion' => $seleccion,
+                  'observacion' => $request->observacion,
+              ]);
+              $alumno->resultados()->save($resultado);
+              $subarea->resultados()->save($resultado);
+
+              }
+        }
         $area = $subarea->areas()->first()->id;
         return Redirect::route('area.show', $area);
     }
@@ -117,10 +130,20 @@ class ResultadoController extends Controller
             $resultado->seleccion = $request->seleccion;
             $resultado->observacion = $request->observacion;
             $resultado->save();
+          }
+          else{
+            if($request->observacion != null){
+                $seleccion= -1;
+                $resultado = Resultado::find($id);
+                $resultado->seleccion = $request->seleccion;
+                $resultado->observacion = $request->observacion;
+                $resultado->save();
+              }
+            }
 
             $area = session()->get('subarea')->areas()->first()->id;
             return Redirect::route('area.show', $area);
-        }
+
 
         return Redirect::back();
     }

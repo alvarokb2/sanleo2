@@ -26,6 +26,9 @@ class UserController extends Controller
     public function index()
     {
         //
+        if(session()->has('alumno')){
+        session()->forget('alumno');
+      }
 
         $rol = Auth::user()->rol;
         if ($rol == 'admin') {
@@ -128,6 +131,9 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        if(session()->has('alumno')){
+          session()->forget('alumno');
+        }
         $user = User::find($id);
         $cursos = $user->cursos()->get();
         session()->put('user', $user);

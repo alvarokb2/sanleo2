@@ -2,8 +2,9 @@
     <div class="row">
         <div class="col-md-1">
         </div>
-        
-        <div class="col-md-11">
+
+
+          <div class="col-md-11">
              <table class="table table-condensed  table-bordered">
                 <thead>
                 <tr>
@@ -23,7 +24,7 @@
                             {{$area->name}}
                         </td>
                         <td>
-                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Sub Areas</a>
+                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Sub Áreas</a>
                         </td>
                     </tr>
                 @endforeach

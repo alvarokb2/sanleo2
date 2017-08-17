@@ -6,5 +6,10 @@
     @elseif(Auth::user()->rol == 'educadora')
         @include('educadora.partials.menu')
     @endif
+
+    @if(session()->has('alumno'))
+    {{ session()->get('alumno')->name }}
+    @endif
+
     @yield('contenido')
 @endsection

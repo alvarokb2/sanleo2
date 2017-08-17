@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('contenido')
-<center><h3>Lista de Areas</h3></center>
+<center><h3>Lista de Áreas</h3></center>
 
 
     @include('partials.lista_areas')

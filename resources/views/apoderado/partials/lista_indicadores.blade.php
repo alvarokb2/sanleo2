@@ -33,7 +33,7 @@
                 </tbody>
             </table>
             <div class="form-group">
-                <label for="comment">Observacón:</label>
+                <label for="comment">Observación:</label>
                     <textarea class="form-control" readonly rows="5" id="comment" name="observacion"
                               spellcheck="true">{{ isset($resultado) ? $resultado->observacion : ''}}</textarea>
             </div>

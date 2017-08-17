@@ -22,7 +22,7 @@
                             {{$area->name}}
                         </td>
                         <td>
-                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Ver Sub Areas</a>
+                            <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Ver Sub Áreas</a>
                         </td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['area.destroy', $area->id]]) !!}
