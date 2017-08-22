@@ -26,9 +26,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        if(session()->has('alumno')){
-        session()->forget('alumno');
-      }
+
 
         $rol = Auth::user()->rol;
         if ($rol == 'admin') {
@@ -103,6 +101,7 @@ class UserController extends Controller
 
     public function asignar_apoderado($id)
     {
+
         $user = User::find($id);
         if (Auth::user()->rol == 'educadora') {
             if (session()->has('alumno')) {
