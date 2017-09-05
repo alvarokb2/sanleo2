@@ -24,10 +24,9 @@ class ResultadoController extends Controller
 
         $areas = $informe->areas()->get();
         $rol = Auth::user()->rol;
-        if($rol == 'educadora' or $rol == 'admin'){
+        if ($rol == 'educadora' or $rol == 'admin') {
             return view('educadora.alumnos.informe.areas')->with('areas', $areas);
-        }
-        elseif($rol == 'apoderado'){
+        } elseif ($rol == 'apoderado') {
             return view('apoderado.alumnos.informe.areas')->with('areas', $areas);
         }
 
@@ -48,42 +47,31 @@ class ResultadoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $alumno = session()->get('alumno');
         $subarea = session()->get('subarea');
-        if($request->seleccion != null){
-            if($request->observacion == null){
-                $observacion = '';
-            }
-            else{
-                $observacion = $request->observacion;
-            }
 
-            $resultado = Resultado::create([
-                'seleccion' => $request->seleccion,
-                'observacion' => $observacion,
-            ]);
+        $observacion = '';
+        $seleccion = -1;
 
-            $alumno->resultados()->save($resultado);
-            $subarea->resultados()->save($resultado);
+        if ($request->seleccion != null){
+            $seleccion = $request->seleccion;
         }
-
-        else{
-          if($request->observacion != null){
-              $seleccion= -1;
-              $resultado = Resultado::create([
-                  'seleccion' => $seleccion,
-                  'observacion' => $request->observacion,
-              ]);
-              $alumno->resultados()->save($resultado);
-              $subarea->resultados()->save($resultado);
-
-              }
+        if ($request->observacion != null) {
+            $observacion = $request->observacion;
         }
+        $resultado = Resultado::create([
+            'seleccion' => $seleccion,
+            'observacion' => $observacion,
+        ]);
+
+        $alumno->resultados()->save($resultado);
+        $subarea->resultados()->save($resultado);
+
         $area = $subarea->areas()->first()->id;
         return Redirect::route('area.show', $area);
     }
@@ -91,7 +79,7 @@ class ResultadoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -102,7 +90,7 @@ class ResultadoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -113,47 +101,37 @@ class ResultadoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        if($request->seleccion != null){
-            if($request->observacion == null){
-                $observacion = '';
-            }
-            else{
-                $observacion = $request->observacion;
-            }
 
-            $resultado = Resultado::find($id);
-            $resultado->seleccion = $request->seleccion;
-            $resultado->observacion = $request->observacion;
-            $resultado->save();
-          }
-          else{
-            if($request->observacion != null){
-                $seleccion= -1;
-                $resultado = Resultado::find($id);
-                $resultado->seleccion = $request->seleccion;
-                $resultado->observacion = $request->observacion;
-                $resultado->save();
-              }
-            }
+        $observacion = '';
+        $seleccion = -1;
 
-            $area = session()->get('subarea')->areas()->first()->id;
-            return Redirect::route('area.show', $area);
+        if ($request->seleccion != null){
+            $seleccion = $request->seleccion;
+        }
+        if ($request->observacion != null) {
+            $observacion = $request->observacion;
+        }
+        $resultado = Resultado::find($id);
+        $resultado->seleccion = $seleccion;
+        $resultado->observacion = $observacion;
+        $resultado->save();
 
+        $area = session()->get('subarea')->areas()->first()->id;
+        return Redirect::route('area.show', $area);
 
-        return Redirect::back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
