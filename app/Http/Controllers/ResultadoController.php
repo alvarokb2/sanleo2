@@ -19,7 +19,9 @@ class ResultadoController extends Controller
     public function index()
     {
         //
+
         $informe = Informe::first();
+
         $areas = $informe->areas()->get();
         $rol = Auth::user()->rol;
         if($rol == 'educadora' or $rol == 'admin'){
