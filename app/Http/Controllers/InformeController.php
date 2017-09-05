@@ -56,6 +56,11 @@ class InformeController extends Controller
             'year' => $request->year,
             'periodo' => $request->periodo
         ]);
+
+        if(Informe::all()->count() == 0){
+            $informe->activo = true;
+        }
+        
         $informe->save();
         return Redirect::route('informe.index');
     }
@@ -115,29 +120,29 @@ class InformeController extends Controller
             'periodo' => $informe_a->periodo
         ]);
 
-        $areas = $informe_a->areas()->all();
-
+        $areas = $informe_a->areas()->get();
         foreach ($areas as $area) {
             //copiar area
+            echo $area;
             $nueva_area = Area::create([
-                'nombre' => $area->nombre,
+                'name' => $area->name,
             ]);
             $informe_b->areas()->save($nueva_area);
 
-            $subareas = $area->subareas()->all();
+            $subareas = $area->subareas()->get();
             foreach ($subareas as $subarea) {
                 //copiar subarea
                 $nueva_subarea = Subarea::create([
-                    'nombre' => $area->nombre,
+                    'name' => $subarea->name,
                 ]);
 
                 $nueva_area->subareas()->save($nueva_subarea);
 
-                $indicadores = $subarea->indicadores()->all();
+                $indicadores = $subarea->indicadores()->get();
                 foreach($indicadores as $indicador){
                     //copiar indicador
                     $nuevo_indicador = Indicador::create([
-                        'nombre' => $area->nombre,
+                        'name' => $indicador->name,
                     ]);
 
                     $nueva_subarea->indicadores()->save($nuevo_indicador);
