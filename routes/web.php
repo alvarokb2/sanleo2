@@ -28,6 +28,10 @@ Route::resource('curso', 'CursoController');
 Route::get('add_educadora/{id}', 'CursoController@add_educadora')->name('add_educadora');
 Route::get('set_educadora/{id}', 'CursoController@set_educadora')->name('set_educadora');
 
+Route::resource('informe', 'InformeController');
+Route::get('copiar_informe/{id}', 'InformeController@copiar')->name('copiar_informe');
+
+
 Route::resource('alumno', 'AlumnoController');
 Route::resource('informe', 'InformeController');
 Route::resource('area', 'AreaController');

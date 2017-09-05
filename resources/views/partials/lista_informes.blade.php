@@ -33,6 +33,9 @@
                             <a href="{{route('informe.show', $informe->id)}}" class="btn btn-primary">Ver áreas</a>
                         </td>
                         <td>
+                            <a class="btn btn-primary" href="{{route('copiar_informe', $informe->id)}}">Copiar informe</a>
+                        </td>
+                        <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['informe.destroy', $informe->id]]) !!}
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
