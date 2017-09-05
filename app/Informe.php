@@ -14,4 +14,5 @@ class Informe extends Model
     protected $fillable = [
         'year', 'periodo'
     ];
+
 }

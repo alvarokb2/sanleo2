@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Sanleo\Area;
 use Sanleo\Informe;
+use Sanleo\Indicador;
+use Sanleo\Subarea;
 
 class InformeController extends Controller
 {
@@ -23,7 +25,7 @@ class InformeController extends Controller
     {
         //
         $informes = Informe::all();
-        if(session()->has('alumno')){
+        if (session()->has('alumno')) {
             session()->forget('alumno');
         }
         return view('admin.informes.informes')->with('informes', $informes);
@@ -43,7 +45,7 @@ class InformeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -61,7 +63,7 @@ class InformeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -76,7 +78,7 @@ class InformeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -89,8 +91,8 @@ class InformeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -103,10 +105,54 @@ class InformeController extends Controller
         return Redirect::route('informe.index');
     }
 
+    public function copiar($id)
+    {
+
+        $informe_a = Informe::find($id);
+
+        $informe_b = Informe::create([
+            'year' => $informe_a->year,
+            'periodo' => $informe_a->periodo
+        ]);
+
+        $areas = $informe_a->areas()->all();
+
+        foreach ($areas as $area) {
+            //copiar area
+            $nueva_area = Area::create([
+                'nombre' => $area->nombre,
+            ]);
+            $informe_b->areas()->save($nueva_area);
+
+            $subareas = $area->subareas()->all();
+            foreach ($subareas as $subarea) {
+                //copiar subarea
+                $nueva_subarea = Subarea::create([
+                    'nombre' => $area->nombre,
+                ]);
+
+                $nueva_area->subareas()->save($nueva_subarea);
+
+                $indicadores = $subarea->indicadores()->all();
+                foreach($indicadores as $indicador){
+                    //copiar indicador
+                    $nuevo_indicador = Indicador::create([
+                        'nombre' => $area->nombre,
+                    ]);
+
+                    $nueva_subarea->indicadores()->save($nuevo_indicador);
+                }
+            }
+        }
+        return Redirect::route('informe.index');
+
+
+    }
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
