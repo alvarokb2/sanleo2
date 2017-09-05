@@ -108,7 +108,8 @@ class AreaController extends Controller
      */
     public function edit($id)
     {
-        //
+      $area = Area::find($id);
+      return view('admin.informes.areas.edit')->with('area', $area);
     }
 
     /**
@@ -120,7 +121,11 @@ class AreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $informe= session()->get('informe');
+      $area = Area::findOrFail($id);
+      $area->name = $request->name;
+      $area->save();
+      return Redirect::route('informe.show',$informe);
     }
 
     /**
