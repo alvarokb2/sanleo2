@@ -22,6 +22,9 @@
                             {{$subarea->name}}
                         </td>
                         <td>
+                          <a href="{{route('subarea.edit', $subarea->id)}}"class="btn btn-primary">Editar</a>
+                      </td>
+                        <td>
                             <a href="{{route('subarea.show', $subarea->id)}}" class="btn btn-default">Ver Indicadores</a>
                         </td>
                         <td>

@@ -86,7 +86,8 @@ class SubareaController extends Controller
      */
     public function edit($id)
     {
-        //
+      $subarea = Subarea::find($id);
+      return view('admin.informes.areas.subareas.edit')->with('subarea', $subarea);
     }
 
     /**
@@ -98,7 +99,11 @@ class SubareaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $area= session()->get('area');
+      $subarea = Subarea::findOrFail($id);
+      $subarea->name = $request->name;
+      $subarea->save();
+      return Redirect::route('area.show',$area);
     }
 
     /**

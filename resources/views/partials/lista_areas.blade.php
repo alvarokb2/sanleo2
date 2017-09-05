@@ -22,6 +22,9 @@
                             {{$area->name}}
                         </td>
                         <td>
+                          <a href="{{route('area.edit', $area->id)}}"class="btn btn-primary">Editar</a>
+                      </td>
+                        <td>
                             <a href="{{route('area.show', $area->id)}}" class="btn btn-default">Ver Sub Áreas</a>
                         </td>
                         <td>
