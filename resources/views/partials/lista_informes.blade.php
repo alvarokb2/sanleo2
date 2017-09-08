@@ -6,7 +6,9 @@
              <table class="table table-condensed table-bordered">
                 <thead>
                 <tr>
-
+                  <th>
+                      Activar
+                  </th>
                     <th>
                         Año
                     </th>
@@ -17,12 +19,18 @@
                         Acciones
                     </th>
 
+
                 </tr>
                 </thead>
                 <tbody>
 
                 @foreach($informes as $informe)
                     <tr>
+                      <td>
+                          <input type="radio" id="seleccion" name="seleccion"/>
+
+                      </td>
+
                         <td>
                             {{$informe->year}}
                         </td>
@@ -30,7 +38,10 @@
                             {{$informe->periodo}}
                         </td>
                         <td>
-                            <a href="{{route('informe.show', $informe->id)}}" class="btn btn-primary">Ver áreas</a>
+                          <a href="{{route('informe.edit', $informe->id)}}"class="btn btn-primary">Editar</a>
+                      </td>
+                        <td>
+                            <a href="{{route('informe.show', $informe->id)}}" class="btn btn-default">Ver áreas</a>
                         </td>
                         <td>
                             <a class="btn btn-primary" href="{{route('copiar_informe', $informe->id)}}">Copiar informe</a>
@@ -40,8 +51,6 @@
                             {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
-
-
                 </tr>
 
                     </tr>

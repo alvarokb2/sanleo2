@@ -10,5 +10,7 @@
         <a class="btn btn-primary" href="{{route('indicador.create')}}">Nuevo</a>
     </div>
 
+    
+
 
 @endsection
