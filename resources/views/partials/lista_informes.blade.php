@@ -27,8 +27,11 @@
                 @foreach($informes as $informe)
                     <tr>
                       <td>
-                          <input type="radio" id="seleccion" name="seleccion"/>
-
+                        @if ($informe->activo)
+                          <a href=""class="btn btn-primary">Activar</a>
+                        @else
+                          <a href="{{route('activar_informe', $informe->id)}}" class="btn btn-default">Activar</a>
+                          @endif
                       </td>
 
                         <td>
