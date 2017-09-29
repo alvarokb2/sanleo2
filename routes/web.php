@@ -30,6 +30,8 @@ Route::get('set_educadora/{id}', 'CursoController@set_educadora')->name('set_edu
 
 Route::resource('informe', 'InformeController');
 Route::get('copiar_informe/{id}', 'InformeController@copiar')->name('copiar_informe');
+Route::get('activar_informe/{id}', 'InformeController@activar_informe')->name('activar_informe');
+
 
 
 Route::resource('alumno', 'AlumnoController');
