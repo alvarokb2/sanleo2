@@ -24,7 +24,7 @@ class InformeController extends Controller
     public function index()
     {
         //
-        $informes = Informe::all();
+        $informes = Informe::all()->sortByDesc('activo');
         if (session()->has('alumno')) {
             session()->forget('alumno');
         }
@@ -44,13 +44,16 @@ class InformeController extends Controller
 
     public function activar_informe($id){
         $informe = Informe::find($id);
+
         $informes = Informe::all();
 
         foreach($informes as $inf){
             $inf->activo = false;
+            $inf->save();
         }
         $informe->activo = true;
-        return back();
+        $informe->save();
+        return Redirect::route('informe.index');
     }
 
     /**
