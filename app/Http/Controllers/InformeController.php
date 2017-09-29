@@ -42,6 +42,17 @@ class InformeController extends Controller
         return view('admin.informes.create');
     }
 
+    public function activar_informe($id){
+        $informe = Informe::find($id);
+        $informes = Informe::all();
+
+        foreach($informes as $inf){
+            $inf->activo = false;
+        }
+        $informe->activo = true;
+        return back();
+    }
+
     /**
      * Store a newly created resource in storage.
      *

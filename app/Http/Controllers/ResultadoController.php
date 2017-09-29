@@ -20,7 +20,7 @@ class ResultadoController extends Controller
     {
         //
 
-        $informe = Informe::first();
+        $informe = Informe::where('activo' , 'true')->first();
 
         $areas = $informe->areas()->get();
         $rol = Auth::user()->rol;
