@@ -28,7 +28,7 @@ class AreaController extends Controller
         $areas = [];
         if (session()->has('informe')){
             $informe = session()->get('informe');
-            $areas = $informe->areas()->get();
+            $areas = $informe->areas()->orderBy('id', 'ASC')->get();
         }
 
         if($rol == 'apoderado'){

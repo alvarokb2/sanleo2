@@ -5,6 +5,7 @@ namespace Sanleo;
 use Illuminate\Database\Eloquent\Model;
 use Sanleo\Curso;
 use Sanleo\Resultado;
+use Sanleo\Informe;
 
 class Alumno extends Model
 {
@@ -37,6 +38,25 @@ class Alumno extends Model
             return $this->resultados()->where('id_subarea', $subarea->id)->where('id_alumno', $this->id)->first();
         }
         
+    }
+
+    public static function completo(){
+        $informe = Informe::where('activo', 'true')->first();
+        $areas = $informe->areas()->get();
+        $contador = 0;
+        foreach($areas as $area) {
+            $subareas = $area->subareas()->get();
+            foreach($subareas as $subarea){
+                $indicadores = $subarea->indicadores()->get();
+                foreach($indicadores as $indicador){
+                    $contador +=1;
+                }
+            }
+        }
+
+        //
+
+        return $contador;
     }
 
     public function hasApoderado(){
