@@ -30,8 +30,8 @@
                         </td>
                         @if(Auth::user()->rol == 'educadora' or Auth::user()->rol == 'admin')
                             <td>
-                                <a href="{{route('alumno.show', $alumno->id)}}" class="btn btn-primary">Contestar
-                                    Informe</a>
+                                <a href="{{route('.......', $alumno->id)}}" class="btn btn-primary">Ver
+                                    Informes</a>
                             </td>
                         @endif
                         @if(Auth::user()->rol == 'educadora')
