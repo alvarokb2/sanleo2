@@ -7,6 +7,7 @@ use Sanleo\Alumno;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Session;
+use Sanleo\Informe;
 
 class AlumnoController extends Controller
 {
@@ -71,10 +72,13 @@ class AlumnoController extends Controller
      */
     public function show($id)
     {
+
         //
         $alumno = Alumno::find($id);
         session()->put('alumno', $alumno);
         return Redirect::route('resultado.index');
+
+
     }
 
     /**

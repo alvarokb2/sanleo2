@@ -3,37 +3,40 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-11">
-            <table class="table">
+            <table class="table table-condensed table-bordered">
                 <thead>
                 <tr>
-
                     <th>
-                        Nombre
+                        Año
                     </th>
                     <th>
-                        Fecha de nacimiento
+                        Semestre
                     </th>
                     <th>
                         Acciones
                     </th>
+
+
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($alumnos as $alumno)
+
+                @foreach($informes as $informe)
                     <tr>
                         <td>
-                            {{$alumno->name}}
+                            {{$informe->year}}
                         </td>
                         <td>
-                            {{$alumno->fecha_nacimiento}}
+                            {{$informe->periodo}}
                         </td>
 
-                          <td>
-                            <a href="{{route('.....', $alumno->id)}}"class="btn btn-primary">Ver Informes</a>
+                        <td>
+                            <a href="#" class="btn btn-default">Ver Informe</a>
                         </td>
-
                     </tr>
+
                 @endforeach
+
                 </tbody>
             </table>
         </div>
